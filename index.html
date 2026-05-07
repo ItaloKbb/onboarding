@@ -1,0 +1,1323 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Boas-vindas | The Loop Code Group</title>
+  <meta
+    name="description"
+    content="Página de boas-vindas para novos membros do grupo The Loop Code: Loop Pages, Loop Games, Nexus AI e Comprow.com."
+  />
+  <style>
+    :root {
+      --bg: #070812;
+      --bg-soft: #0d1020;
+      --panel: rgba(255, 255, 255, 0.075);
+      --panel-strong: rgba(255, 255, 255, 0.12);
+      --text: #f6f7fb;
+      --muted: #aeb6cf;
+      --line: rgba(255, 255, 255, 0.15);
+      --cyan: #64f4ff;
+      --blue: #75a7ff;
+      --violet: #9b7cff;
+      --pink: #ff69c8;
+      --green: #88ffc4;
+      --amber: #ffd166;
+      --shadow: 0 24px 80px rgba(0, 0, 0, 0.45);
+      --radius-lg: 34px;
+      --radius-md: 24px;
+      --radius-sm: 16px;
+      --max: 1180px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at 18% 12%, rgba(100, 244, 255, 0.2), transparent 30%),
+        radial-gradient(circle at 75% 8%, rgba(155, 124, 255, 0.26), transparent 28%),
+        radial-gradient(circle at 50% 88%, rgba(255, 105, 200, 0.12), transparent 28%),
+        linear-gradient(135deg, #060710 0%, #090d1c 48%, #0a0715 100%);
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      opacity: 0.24;
+      background-image:
+        linear-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.08) 1px, transparent 1px);
+      background-size: 56px 56px;
+      mask-image: linear-gradient(to bottom, black, transparent 82%);
+      z-index: 0;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .aurora {
+      position: fixed;
+      width: 48vw;
+      height: 48vw;
+      min-width: 420px;
+      min-height: 420px;
+      filter: blur(80px);
+      opacity: 0.22;
+      border-radius: 999px;
+      pointer-events: none;
+      z-index: 0;
+      animation: float 14s ease-in-out infinite alternate;
+    }
+
+    .aurora.one {
+      left: -12vw;
+      top: 14vh;
+      background: var(--cyan);
+    }
+
+    .aurora.two {
+      right: -18vw;
+      top: 36vh;
+      background: var(--violet);
+      animation-delay: -4s;
+    }
+
+    .aurora.three {
+      left: 38vw;
+      bottom: -24vw;
+      background: var(--pink);
+      animation-delay: -8s;
+    }
+
+    @keyframes float {
+      from { transform: translate3d(0, 0, 0) scale(1); }
+      to { transform: translate3d(28px, -34px, 0) scale(1.08); }
+    }
+
+    .page {
+      position: relative;
+      z-index: 1;
+    }
+
+    .container {
+      width: min(var(--max), calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      backdrop-filter: blur(24px);
+      background: rgba(7, 8, 18, 0.62);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .nav-inner {
+      width: min(var(--max), calc(100% - 40px));
+      margin: 0 auto;
+      min-height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+    }
+
+    .brand-mark {
+      width: 40px;
+      height: 40px;
+      display: grid;
+      place-items: center;
+      border-radius: 14px;
+      background:
+        linear-gradient(135deg, rgba(100, 244, 255, 0.3), rgba(155, 124, 255, 0.28)),
+        rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      box-shadow: 0 0 42px rgba(100, 244, 255, 0.18);
+    }
+
+    .brand-mark svg {
+      width: 24px;
+      height: 24px;
+    }
+
+    .brand small {
+      display: block;
+      margin-top: 2px;
+      font-size: 11px;
+      color: var(--muted);
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      font-weight: 700;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .nav-links a {
+      padding: 10px 13px;
+      border-radius: 999px;
+      transition: 180ms ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--text);
+      background: rgba(255, 255, 255, 0.08);
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      width: fit-content;
+      padding: 9px 13px;
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      border-radius: 999px;
+      color: var(--muted);
+      background: rgba(255, 255, 255, 0.06);
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.22);
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+    }
+
+    .pulse {
+      width: 9px;
+      height: 9px;
+      border-radius: 999px;
+      background: var(--green);
+      box-shadow: 0 0 0 0 rgba(136, 255, 196, 0.7);
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0% { box-shadow: 0 0 0 0 rgba(136, 255, 196, 0.55); }
+      70% { box-shadow: 0 0 0 10px rgba(136, 255, 196, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(136, 255, 196, 0); }
+    }
+
+    .hero {
+      padding: 92px 0 52px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.08fr) minmax(320px, 0.92fr);
+      align-items: center;
+      gap: 42px;
+    }
+
+    .hero h1 {
+      margin: 22px 0 18px;
+      max-width: 860px;
+      font-size: clamp(46px, 8vw, 92px);
+      line-height: 0.92;
+      letter-spacing: -0.08em;
+    }
+
+    .gradient-text {
+      background: linear-gradient(90deg, var(--cyan), var(--blue), var(--violet), var(--pink));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .hero p {
+      max-width: 720px;
+      color: var(--muted);
+      font-size: clamp(17px, 2vw, 22px);
+      line-height: 1.65;
+      margin: 0;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 34px;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      min-height: 48px;
+      padding: 0 18px;
+      border-radius: 999px;
+      font-weight: 800;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      transition: 180ms ease;
+    }
+
+    .button.primary {
+      color: #03111a;
+      background: linear-gradient(135deg, var(--cyan), var(--violet));
+      box-shadow: 0 18px 46px rgba(100, 244, 255, 0.18);
+    }
+
+    .button.secondary {
+      color: var(--text);
+      background: rgba(255, 255, 255, 0.075);
+    }
+
+    .button:hover {
+      transform: translateY(-2px);
+      filter: brightness(1.08);
+    }
+
+    .hero-card {
+      position: relative;
+      overflow: hidden;
+      border-radius: var(--radius-lg);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      background:
+        linear-gradient(150deg, rgba(255, 255, 255, 0.13), rgba(255, 255, 255, 0.04)),
+        rgba(255, 255, 255, 0.05);
+      box-shadow: var(--shadow);
+      min-height: 520px;
+      padding: 28px;
+    }
+
+    .hero-card::before {
+      content: "";
+      position: absolute;
+      inset: -120px -120px auto auto;
+      width: 320px;
+      height: 320px;
+      border-radius: 999px;
+      background: rgba(100, 244, 255, 0.2);
+      filter: blur(44px);
+    }
+
+    .orbit {
+      position: absolute;
+      inset: 52px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 999px;
+      animation: rotate 26s linear infinite;
+    }
+
+    .orbit.two {
+      inset: 100px 44px 78px 86px;
+      animation-duration: 34s;
+      animation-direction: reverse;
+    }
+
+    @keyframes rotate {
+      to { transform: rotate(360deg); }
+    }
+
+    .node {
+      position: absolute;
+      width: 76px;
+      height: 76px;
+      border-radius: 24px;
+      display: grid;
+      place-items: center;
+      font-weight: 900;
+      color: #06101b;
+      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.28);
+    }
+
+    .node.a { left: 20px; top: 72px; background: linear-gradient(135deg, var(--cyan), #ffffff); }
+    .node.b { right: 36px; top: 138px; background: linear-gradient(135deg, var(--violet), #ffffff); }
+    .node.c { left: 70px; bottom: 64px; background: linear-gradient(135deg, var(--green), #ffffff); }
+    .node.d { right: 68px; bottom: 70px; background: linear-gradient(135deg, var(--pink), #ffffff); }
+
+    .core {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      width: 210px;
+      height: 210px;
+      display: grid;
+      place-items: center;
+      text-align: center;
+      padding: 24px;
+      border-radius: 58px;
+      background:
+        radial-gradient(circle at 30% 20%, rgba(255, 255, 255, 0.26), transparent 36%),
+        linear-gradient(145deg, rgba(100, 244, 255, 0.2), rgba(155, 124, 255, 0.18));
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.18), 0 26px 76px rgba(0, 0, 0, 0.35);
+    }
+
+    .core strong {
+      display: block;
+      font-size: 34px;
+      line-height: 0.9;
+      letter-spacing: -0.08em;
+    }
+
+    .core span {
+      display: block;
+      margin-top: 12px;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.4;
+    }
+
+    .hero-stat {
+      position: absolute;
+      left: 24px;
+      right: 24px;
+      bottom: 24px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+    }
+
+    .stat {
+      padding: 16px;
+      border-radius: 20px;
+      background: rgba(0, 0, 0, 0.24);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .stat strong {
+      display: block;
+      font-size: 22px;
+      letter-spacing: -0.04em;
+    }
+
+    .stat span {
+      display: block;
+      margin-top: 4px;
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    section {
+      padding: 72px 0;
+    }
+
+    .section-head {
+      display: flex;
+      justify-content: space-between;
+      gap: 24px;
+      align-items: end;
+      margin-bottom: 26px;
+    }
+
+    .section-head h2 {
+      margin: 0;
+      max-width: 760px;
+      font-size: clamp(32px, 5vw, 58px);
+      line-height: 1;
+      letter-spacing: -0.06em;
+    }
+
+    .section-head p {
+      margin: 0;
+      max-width: 430px;
+      color: var(--muted);
+      line-height: 1.65;
+    }
+
+    .glass {
+      border: 1px solid rgba(255, 255, 255, 0.13);
+      background: rgba(255, 255, 255, 0.065);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(20px);
+    }
+
+    .welcome-panel {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(260px, 0.46fr);
+      gap: 22px;
+      border-radius: var(--radius-lg);
+      padding: 28px;
+    }
+
+    .welcome-panel h3 {
+      margin: 0 0 16px;
+      font-size: clamp(26px, 4vw, 42px);
+      letter-spacing: -0.05em;
+    }
+
+    .welcome-panel p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.78;
+      font-size: 17px;
+    }
+
+    .quote-card {
+      border-radius: var(--radius-md);
+      padding: 22px;
+      background:
+        linear-gradient(150deg, rgba(100, 244, 255, 0.14), rgba(155, 124, 255, 0.1)),
+        rgba(0, 0, 0, 0.22);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+    }
+
+    .quote-card .label {
+      color: var(--cyan);
+      font-weight: 900;
+      font-size: 12px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+    }
+
+    .quote-card blockquote {
+      margin: 18px 0 0;
+      font-size: 22px;
+      line-height: 1.32;
+      letter-spacing: -0.04em;
+      font-weight: 800;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 18px;
+    }
+
+    .company-card {
+      grid-column: span 6;
+      position: relative;
+      overflow: hidden;
+      min-height: 330px;
+      padding: 24px;
+      border-radius: var(--radius-md);
+      border: 1px solid rgba(255, 255, 255, 0.13);
+      background:
+        linear-gradient(150deg, rgba(255, 255, 255, 0.095), rgba(255, 255, 255, 0.035)),
+        rgba(255, 255, 255, 0.055);
+      transition: 220ms ease;
+    }
+
+    .company-card.large {
+      grid-column: span 12;
+      min-height: 300px;
+    }
+
+    .company-card:hover {
+      transform: translateY(-5px);
+      border-color: rgba(100, 244, 255, 0.38);
+      box-shadow: 0 24px 80px rgba(0, 0, 0, 0.42), 0 0 0 1px rgba(100, 244, 255, 0.08);
+    }
+
+    .company-card::after {
+      content: "";
+      position: absolute;
+      right: -80px;
+      bottom: -80px;
+      width: 220px;
+      height: 220px;
+      border-radius: 999px;
+      background: var(--accent, var(--cyan));
+      opacity: 0.12;
+      filter: blur(24px);
+    }
+
+    .company-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 18px;
+      margin-bottom: 22px;
+    }
+
+    .company-icon {
+      width: 58px;
+      height: 58px;
+      display: grid;
+      place-items: center;
+      border-radius: 20px;
+      color: #06101b;
+      font-weight: 950;
+      background: linear-gradient(135deg, var(--accent, var(--cyan)), #ffffff);
+      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.25);
+    }
+
+    .tag {
+      padding: 8px 10px;
+      border-radius: 999px;
+      color: var(--muted);
+      background: rgba(0, 0, 0, 0.22);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      font-size: 12px;
+      font-weight: 800;
+      white-space: nowrap;
+    }
+
+    .company-card h3 {
+      margin: 0 0 12px;
+      font-size: 28px;
+      letter-spacing: -0.05em;
+    }
+
+    .company-card p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.72;
+      max-width: 920px;
+    }
+
+    .chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 22px;
+    }
+
+    .chip {
+      padding: 8px 10px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.07);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      color: #d9def0;
+      font-size: 12px;
+      font-weight: 750;
+    }
+
+    .values-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+
+    .value-card {
+      min-height: 210px;
+      padding: 20px;
+      border-radius: var(--radius-md);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      background: rgba(255, 255, 255, 0.055);
+    }
+
+    .value-card .number {
+      color: var(--cyan);
+      font-weight: 950;
+      letter-spacing: -0.04em;
+      font-size: 28px;
+    }
+
+    .value-card h3 {
+      margin: 22px 0 10px;
+      letter-spacing: -0.04em;
+      font-size: 21px;
+    }
+
+    .value-card p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.65;
+      font-size: 14px;
+    }
+
+    .timeline {
+      position: relative;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+
+    .step {
+      position: relative;
+      padding: 20px;
+      min-height: 250px;
+      border-radius: var(--radius-md);
+      background: rgba(255, 255, 255, 0.058);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      overflow: hidden;
+    }
+
+    .step::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 3px;
+      background: linear-gradient(90deg, var(--cyan), var(--violet));
+    }
+
+    .step small {
+      color: var(--cyan);
+      font-weight: 900;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    .step h3 {
+      margin: 20px 0 10px;
+      font-size: 22px;
+      letter-spacing: -0.04em;
+    }
+
+    .step p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.65;
+      font-size: 14px;
+    }
+
+    .stack-panel {
+      border-radius: var(--radius-lg);
+      padding: 24px;
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 18px;
+      align-items: stretch;
+    }
+
+    .stack-copy {
+      padding: 22px;
+      border-radius: var(--radius-md);
+      background: rgba(0, 0, 0, 0.22);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .stack-copy h3 {
+      margin: 0 0 14px;
+      font-size: 30px;
+      letter-spacing: -0.05em;
+    }
+
+    .stack-copy p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    .tools {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+    }
+
+    .tool {
+      padding: 16px;
+      border-radius: 18px;
+      background: rgba(255, 255, 255, 0.064);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .tool strong {
+      display: block;
+      margin-bottom: 6px;
+    }
+
+    .tool span {
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.5;
+    }
+
+    .onboarding {
+      display: grid;
+      grid-template-columns: 0.85fr 1.15fr;
+      gap: 18px;
+      align-items: start;
+    }
+
+    .checklist {
+      border-radius: var(--radius-lg);
+      padding: 24px;
+    }
+
+    .checklist h3 {
+      margin: 0 0 18px;
+      font-size: 28px;
+      letter-spacing: -0.05em;
+    }
+
+    .check-item {
+      display: grid;
+      grid-template-columns: 28px 1fr;
+      gap: 12px;
+      padding: 14px 0;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      color: var(--muted);
+      line-height: 1.55;
+    }
+
+    .check-item:first-of-type {
+      border-top: 0;
+    }
+
+    .check-dot {
+      width: 24px;
+      height: 24px;
+      display: grid;
+      place-items: center;
+      border-radius: 999px;
+      background: rgba(100, 244, 255, 0.14);
+      color: var(--cyan);
+      font-weight: 900;
+    }
+
+    .rules {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+    }
+
+    .rule {
+      border-radius: var(--radius-md);
+      padding: 20px;
+      background: rgba(255, 255, 255, 0.055);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+    }
+
+    .rule h3 {
+      margin: 0 0 10px;
+      font-size: 20px;
+      letter-spacing: -0.04em;
+    }
+
+    .rule p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.62;
+      font-size: 14px;
+    }
+
+    .cta {
+      padding: 36px;
+      border-radius: var(--radius-lg);
+      text-align: center;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .cta::before {
+      content: "";
+      position: absolute;
+      inset: -120px 14% auto;
+      height: 260px;
+      background: linear-gradient(90deg, var(--cyan), var(--violet), var(--pink));
+      filter: blur(90px);
+      opacity: 0.2;
+    }
+
+    .cta > * {
+      position: relative;
+    }
+
+    .cta h2 {
+      margin: 0 auto 16px;
+      max-width: 840px;
+      font-size: clamp(34px, 5vw, 64px);
+      line-height: 0.98;
+      letter-spacing: -0.07em;
+    }
+
+    .cta p {
+      margin: 0 auto;
+      max-width: 730px;
+      color: var(--muted);
+      line-height: 1.75;
+      font-size: 17px;
+    }
+
+    footer {
+      padding: 30px 0 44px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      padding-top: 24px;
+    }
+
+    .fade-up {
+      opacity: 0;
+      transform: translateY(22px);
+      transition: 700ms ease;
+    }
+
+    .fade-up.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (max-width: 980px) {
+      .hero-grid,
+      .welcome-panel,
+      .stack-panel,
+      .onboarding {
+        grid-template-columns: 1fr;
+      }
+
+      .values-grid,
+      .timeline {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .section-head {
+        display: block;
+      }
+
+      .section-head p {
+        margin-top: 14px;
+      }
+
+      .nav-links {
+        display: none;
+      }
+    }
+
+    @media (max-width: 720px) {
+      .container,
+      .nav-inner {
+        width: min(100% - 28px, var(--max));
+      }
+
+      .hero {
+        padding-top: 58px;
+      }
+
+      .hero-card {
+        min-height: 460px;
+        padding: 18px;
+      }
+
+      .core {
+        width: 174px;
+        height: 174px;
+        border-radius: 44px;
+      }
+
+      .core strong {
+        font-size: 28px;
+      }
+
+      .node {
+        width: 60px;
+        height: 60px;
+        border-radius: 18px;
+      }
+
+      .hero-stat,
+      .tools,
+      .rules,
+      .values-grid,
+      .timeline {
+        grid-template-columns: 1fr;
+      }
+
+      .company-card,
+      .company-card.large {
+        grid-column: span 12;
+      }
+
+      section {
+        padding: 52px 0;
+      }
+
+      .footer-inner {
+        display: block;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="aurora one"></div>
+  <div class="aurora two"></div>
+  <div class="aurora three"></div>
+
+  <nav class="nav">
+    <div class="nav-inner">
+      <a class="brand" href="#top" aria-label="The Loop Code Group">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 24C12 14.6 19.1 8 28.1 8C35.4 8 41 13.1 41 19.8C41 26.3 36.1 31.1 29.7 31.1H21.9" stroke="white" stroke-width="4" stroke-linecap="round"/>
+            <path d="M36 24C36 33.4 28.9 40 19.9 40C12.6 40 7 34.9 7 28.2C7 21.7 11.9 16.9 18.3 16.9H26.1" stroke="#64f4ff" stroke-width="4" stroke-linecap="round"/>
+          </svg>
+        </span>
+        <span>
+          The Loop Code
+          <small>Group Onboarding</small>
+        </span>
+      </a>
+
+      <div class="nav-links" aria-label="Navegação principal">
+        <a href="#grupo">Grupo</a>
+        <a href="#empresas">Empresas</a>
+        <a href="#cultura">Cultura</a>
+        <a href="#primeira-semana">Primeira semana</a>
+      </div>
+    </div>
+  </nav>
+
+  <main id="top" class="page">
+    <header class="hero container">
+      <div class="hero-grid">
+        <div>
+          <div class="pill"><span class="pulse"></span> Boas-vindas oficiais ao ecossistema</div>
+          <h1>Bem-vindo ao <span class="gradient-text">Loop</span>.</h1>
+          <p>
+            Você agora faz parte de um grupo que transforma ideias em produtos digitais, páginas de alta performance, experiências interativas, inteligência artificial privada e operações comerciais mais inteligentes.
+          </p>
+          <div class="hero-actions">
+            <a class="button primary" href="#primeira-semana">Começar onboarding</a>
+            <a class="button secondary" href="#empresas">Conhecer o grupo</a>
+          </div>
+        </div>
+
+        <aside class="hero-card" aria-label="Mapa visual do grupo The Loop Code">
+          <div class="orbit"></div>
+          <div class="orbit two"></div>
+          <div class="node a">TLC</div>
+          <div class="node b">LP</div>
+          <div class="node c">NX</div>
+          <div class="node d">CP</div>
+          <div class="core">
+            <div>
+              <strong>The Loop Code</strong>
+              <span>código, design, IA e operação conectados em um só ecossistema.</span>
+            </div>
+          </div>
+          <div class="hero-stat">
+            <div class="stat">
+              <strong>Next.js</strong>
+              <span>performance e SEO</span>
+            </div>
+            <div class="stat">
+              <strong>AI-first</strong>
+              <span>automação real</span>
+            </div>
+            <div class="stat">
+              <strong>Local-first</strong>
+              <span>privacidade e controle</span>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </header>
+
+    <section id="grupo" class="container fade-up">
+      <div class="welcome-panel glass">
+        <div>
+          <h3>O que somos</h3>
+          <p>
+            A The Loop Code é o núcleo de tecnologia e criação do grupo. Nascemos para tirar ideias do papel e transformar conceitos abstratos em experiências digitais de alto impacto: sites, landing pages, sistemas web, automações, produtos com IA e soluções próprias.
+            <br /><br />
+            Nosso foco é simples: criar tecnologia que funcione, venda, escale e continue evoluindo. Aqui, design não é enfeite. Código não é ritual secreto. IA não é mágica. Tudo precisa servir a uma experiência melhor para clientes, usuários e equipe.
+          </p>
+        </div>
+        <div class="quote-card">
+          <span class="label">Nossa direção</span>
+          <blockquote>
+            Transformar ideias complexas em produtos digitais claros, bonitos, rápidos e úteis.
+          </blockquote>
+        </div>
+      </div>
+    </section>
+
+    <section id="empresas" class="container fade-up">
+      <div class="section-head">
+        <h2>As frentes do nosso ecossistema</h2>
+        <p>Cada marca tem um papel próprio, mas todas seguem a mesma lógica: unir estética, tecnologia e resultado.</p>
+      </div>
+
+      <div class="cards">
+        <article class="company-card large" style="--accent: var(--cyan)">
+          <div class="company-top">
+            <div class="company-icon">∞</div>
+            <span class="tag">Empresa-mãe</span>
+          </div>
+          <h3>The Loop Code</h3>
+          <p>
+            A base do grupo. Atuamos com criação de sites, landing pages, sistemas web e soluções digitais sob medida. Nosso diferencial está em performance, código limpo, SEO técnico, experiência mobile first, design aplicado e parceria contínua com os clientes.
+          </p>
+          <div class="chips">
+            <span class="chip">Sites de alta performance</span>
+            <span class="chip">Landing pages</span>
+            <span class="chip">E-commerce</span>
+            <span class="chip">Sistemas web</span>
+            <span class="chip">Next.js</span>
+            <span class="chip">SEO</span>
+          </div>
+        </article>
+
+        <article class="company-card" style="--accent: var(--blue)">
+          <div class="company-top">
+            <div class="company-icon">LP</div>
+            <span class="tag">Produto SaaS</span>
+          </div>
+          <h3>Loop Pages</h3>
+          <p>
+            A frente de páginas, criação assistida por IA, hospedagem, painel de edição e publicação rápida. É onde transformamos a experiência de criar páginas em algo mais simples, escalável e acessível para pessoas, profissionais e empresas.
+          </p>
+          <div class="chips">
+            <span class="chip">Páginas com IA</span>
+            <span class="chip">CMS</span>
+            <span class="chip">Hospedagem</span>
+            <span class="chip">Organizações</span>
+          </div>
+        </article>
+
+        <article class="company-card" style="--accent: var(--pink)">
+          <div class="company-top">
+            <div class="company-icon">LG</div>
+            <span class="tag">Criatividade interativa</span>
+          </div>
+          <h3>Loop Games</h3>
+          <p>
+            O laboratório criativo do grupo para jogos, experiências interativas, protótipos gamificados e produtos digitais com foco em diversão, retenção e narrativa. É a área onde experimentação vira aprendizado de produto.
+          </p>
+          <div class="chips">
+            <span class="chip">Games</span>
+            <span class="chip">Gamificação</span>
+            <span class="chip">Prototipagem</span>
+            <span class="chip">Experiências digitais</span>
+          </div>
+        </article>
+
+        <article class="company-card" style="--accent: var(--green)">
+          <div class="company-top">
+            <div class="company-icon">NX</div>
+            <span class="tag">IA privada</span>
+          </div>
+          <h3>Nexus AI</h3>
+          <p>
+            A frente de inteligência artificial privada do grupo. O objetivo é construir soluções local-first para casas inteligentes, automação, memória vetorial, roteamento de modelos e fallback em nuvem apenas quando necessário. Privacidade, baixa latência e controle são princípios de produto.
+          </p>
+          <div class="chips">
+            <span class="chip">Totem Nexus</span>
+            <span class="chip">IA local</span>
+            <span class="chip">Smart home</span>
+            <span class="chip">RAG</span>
+            <span class="chip">IoT</span>
+          </div>
+        </article>
+
+        <article class="company-card" style="--accent: var(--amber)">
+          <div class="company-top">
+            <div class="company-icon">CP</div>
+            <span class="tag">Operação comercial</span>
+          </div>
+          <h3>Comprow.com</h3>
+          <p>
+            A frente comercial e operacional do grupo. Seu papel é conectar tecnologia, vitrine, compra, venda, atendimento e processos digitais. É onde produto, presença online e operação se encontram para gerar receita com mais clareza.
+          </p>
+          <div class="chips">
+            <span class="chip">Comércio digital</span>
+            <span class="chip">Operações</span>
+            <span class="chip">Vitrine</span>
+            <span class="chip">Automação</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="cultura" class="container fade-up">
+      <div class="section-head">
+        <h2>Como pensamos</h2>
+        <p>Não queremos apenas entregar tarefas. Queremos construir um padrão de trabalho que deixe cada produto melhor a cada ciclo.</p>
+      </div>
+
+      <div class="values-grid">
+        <article class="value-card">
+          <div class="number">01</div>
+          <h3>Performance é produto</h3>
+          <p>Velocidade, SEO, acessibilidade e responsividade não são extras. São parte da entrega.</p>
+        </article>
+        <article class="value-card">
+          <div class="number">02</div>
+          <h3>Design precisa vender</h3>
+          <p>Bonito é importante. Claro, confiável e convertido em resultado é melhor ainda.</p>
+        </article>
+        <article class="value-card">
+          <div class="number">03</div>
+          <h3>Código limpo escala</h3>
+          <p>Escrevemos pensando em manutenção, reuso, equipe e crescimento do produto.</p>
+        </article>
+        <article class="value-card">
+          <div class="number">04</div>
+          <h3>IA com propósito</h3>
+          <p>Usamos IA para acelerar trabalho, automatizar processos e melhorar decisões, não para mascarar bagunça.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="container fade-up">
+      <div class="section-head">
+        <h2>Nosso fluxo de entrega</h2>
+        <p>Uma estrutura simples para evitar o esporte favorito das empresas: começar correndo e descobrir o objetivo depois.</p>
+      </div>
+
+      <div class="timeline">
+        <article class="step">
+          <small>Etapa 1</small>
+          <h3>Descoberta e planejamento</h3>
+          <p>Entendemos objetivo, público, proposta, escopo, prioridades e restrições. Sem briefing, tudo vira adivinhação cara.</p>
+        </article>
+        <article class="step">
+          <small>Etapa 2</small>
+          <h3>Design e prototipagem</h3>
+          <p>Criamos estrutura, fluxo visual, componentes e experiência. O design precisa orientar o usuário, não apenas ocupar espaço.</p>
+        </article>
+        <article class="step">
+          <small>Etapa 3</small>
+          <h3>Desenvolvimento e integrações</h3>
+          <p>Construímos com tecnologias modernas, integrações, painel, APIs, métricas, automações e padrões de qualidade.</p>
+        </article>
+        <article class="step">
+          <small>Etapa 4</small>
+          <h3>Lançamento e evolução</h3>
+          <p>Publicamos com domínio, SSL, monitoramento e suporte. Depois vem melhoria contínua, porque produto parado envelhece rápido.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="container fade-up">
+      <div class="stack-panel glass">
+        <div class="stack-copy">
+          <h3>Stack mental da equipe</h3>
+          <p>
+            Trabalhamos onde produto, engenharia, design, marketing e IA se cruzam. O melhor membro do time não é quem sabe tudo, mas quem aprende rápido, documenta decisões, comunica bloqueios e entrega com capricho.
+          </p>
+        </div>
+        <div class="tools">
+          <div class="tool">
+            <strong>Front-end moderno</strong>
+            <span>Next.js, React, TailwindCSS, design systems, performance e componentes reutilizáveis.</span>
+          </div>
+          <div class="tool">
+            <strong>Back-end e dados</strong>
+            <span>Node.js, APIs, Prisma, bancos relacionais, autenticação e integrações externas.</span>
+          </div>
+          <div class="tool">
+            <strong>IA aplicada</strong>
+            <span>Modelos locais e em nuvem, automações, RAG, embeddings, validação de intenção e geração assistida.</span>
+          </div>
+          <div class="tool">
+            <strong>Produto e operação</strong>
+            <span>SEO, métricas, CRM, páginas de conversão, atendimento e crescimento contínuo.</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="primeira-semana" class="container fade-up">
+      <div class="section-head">
+        <h2>Sua primeira semana</h2>
+        <p>Comece entendendo o grupo, os produtos, os canais e o padrão de entrega. Depois sim, pode quebrar algo. Com branch, por favor.</p>
+      </div>
+
+      <div class="onboarding">
+        <aside class="checklist glass">
+          <h3>Checklist inicial</h3>
+          <div class="check-item">
+            <div class="check-dot">✓</div>
+            <div>Entrar nos canais internos e acompanhar comunicados, decisões, roadmap e tarefas do time.</div>
+          </div>
+          <div class="check-item">
+            <div class="check-dot">✓</div>
+            <div>Ler a visão de cada marca: The Loop Code, Loop Pages, Loop Games, Nexus AI e Comprow.com.</div>
+          </div>
+          <div class="check-item">
+            <div class="check-dot">✓</div>
+            <div>Configurar ambiente de trabalho, acessos, repositórios, ferramentas e padrões de branch.</div>
+          </div>
+          <div class="check-item">
+            <div class="check-dot">✓</div>
+            <div>Escolher uma primeira tarefa pequena para entender o fluxo de entrega sem causar um pequeno incêndio digital.</div>
+          </div>
+          <div class="check-item">
+            <div class="check-dot">✓</div>
+            <div>Documentar dúvidas, decisões e aprendizados para ajudar quem entrar depois.</div>
+          </div>
+        </aside>
+
+        <div class="rules">
+          <article class="rule">
+            <h3>Comunique cedo</h3>
+            <p>Bloqueio escondido vira atraso. Dúvida comunicada vira colaboração.</p>
+          </article>
+          <article class="rule">
+            <h3>Documente decisões</h3>
+            <p>Memória humana é um banco de dados sem backup. Escreva o que foi decidido.</p>
+          </article>
+          <article class="rule">
+            <h3>Entregue em ciclos</h3>
+            <p>Preferimos progresso validado a perfeição invisível que nunca chega ao usuário.</p>
+          </article>
+          <article class="rule">
+            <h3>Pense no cliente</h3>
+            <p>Toda tela, API, campanha ou automação precisa resolver um problema real.</p>
+          </article>
+          <article class="rule">
+            <h3>Cuide da estética</h3>
+            <p>O detalhe visual comunica qualidade antes mesmo do usuário ler qualquer texto.</p>
+          </article>
+          <article class="rule">
+            <h3>Use IA com critério</h3>
+            <p>IA acelera, mas revisão humana mantém qualidade, segurança e coerência.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="container fade-up">
+      <div class="cta glass">
+        <h2>Você entrou para construir o próximo ciclo.</h2>
+        <p>
+          O grupo The Loop Code existe para criar produtos digitais que unem tecnologia, estética, automação e resultado. Aqui, cada pessoa ajuda a transformar ideias em sistemas, páginas, jogos, experiências e soluções inteligentes que podem crescer de verdade.
+        </p>
+        <div class="hero-actions" style="justify-content: center;">
+          <a class="button primary" href="#top">Voltar ao topo</a>
+          <a class="button secondary" href="https://theloopcode.com/" target="_blank" rel="noreferrer">Visitar The Loop Code</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="container">
+    <div class="footer-inner">
+      <div>© 2026 The Loop Code Group. Boas-vindas aos novos membros.</div>
+      <div>The Loop Code • Loop Pages • Loop Games • Nexus AI • Comprow.com</div>
+    </div>
+  </footer>
+
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.12 });
+
+    document.querySelectorAll('.fade-up').forEach((element) => observer.observe(element));
+  </script>
+</body>
+</html>
