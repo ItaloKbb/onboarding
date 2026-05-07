@@ -6,27 +6,34 @@
   <title>Boas-vindas | The Loop Code Group</title>
   <meta
     name="description"
-    content="Página de boas-vindas para novos membros do grupo The Loop Code: Loop Pages, Loop Games, Nexus AI e Comprow.com."
+    content="Página institucional de boas-vindas para novos membros do The Loop Code Group."
   />
   <style>
     :root {
-      --bg: #070812;
-      --bg-soft: #0d1020;
-      --panel: rgba(255, 255, 255, 0.075);
-      --panel-strong: rgba(255, 255, 255, 0.12);
-      --text: #f6f7fb;
-      --muted: #aeb6cf;
-      --line: rgba(255, 255, 255, 0.15);
-      --cyan: #64f4ff;
-      --blue: #75a7ff;
-      --violet: #9b7cff;
-      --pink: #ff69c8;
-      --green: #88ffc4;
-      --amber: #ffd166;
-      --shadow: 0 24px 80px rgba(0, 0, 0, 0.45);
-      --radius-lg: 34px;
-      --radius-md: 24px;
-      --radius-sm: 16px;
+      --bg: #050816;
+      --bg-2: #080d1f;
+      --surface: #0d1328;
+      --surface-2: #101936;
+      --surface-3: #131f42;
+      --line: rgba(148, 163, 184, 0.18);
+      --line-strong: rgba(148, 163, 184, 0.28);
+      --text: #f8fafc;
+      --muted: #a8b3c7;
+      --muted-2: #748199;
+      --blue: #3b82f6;
+      --blue-dark: #1d4ed8;
+      --cyan: #22d3ee;
+      --violet: #8b5cf6;
+      --green: #34d399;
+      --amber: #fbbf24;
+      --danger: #fb7185;
+      --white: #ffffff;
+      --shadow: 0 24px 80px rgba(0, 0, 0, 0.42);
+      --shadow-soft: 0 16px 44px rgba(0, 0, 0, 0.26);
+      --radius-xl: 34px;
+      --radius-lg: 26px;
+      --radius-md: 18px;
+      --radius-sm: 12px;
       --max: 1180px;
     }
 
@@ -41,13 +48,12 @@
     body {
       margin: 0;
       min-height: 100vh;
-      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       color: var(--text);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       background:
-        radial-gradient(circle at 18% 12%, rgba(100, 244, 255, 0.2), transparent 30%),
-        radial-gradient(circle at 75% 8%, rgba(155, 124, 255, 0.26), transparent 28%),
-        radial-gradient(circle at 50% 88%, rgba(255, 105, 200, 0.12), transparent 28%),
-        linear-gradient(135deg, #060710 0%, #090d1c 48%, #0a0715 100%);
+        radial-gradient(circle at 18% 8%, rgba(34, 211, 238, 0.16), transparent 32%),
+        radial-gradient(circle at 82% 6%, rgba(59, 130, 246, 0.16), transparent 28%),
+        linear-gradient(180deg, var(--bg) 0%, var(--bg-2) 52%, #040712 100%);
       overflow-x: hidden;
     }
 
@@ -56,12 +62,20 @@
       position: fixed;
       inset: 0;
       pointer-events: none;
-      opacity: 0.24;
-      background-image:
-        linear-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255, 255, 255, 0.08) 1px, transparent 1px);
-      background-size: 56px 56px;
-      mask-image: linear-gradient(to bottom, black, transparent 82%);
+      background:
+        linear-gradient(rgba(148, 163, 184, 0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(148, 163, 184, 0.04) 1px, transparent 1px);
+      background-size: 48px 48px;
+      mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), transparent 80%);
+      z-index: 0;
+    }
+
+    body::after {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      background: radial-gradient(circle at center, transparent 0%, rgba(0, 0, 0, 0.36) 100%);
       z-index: 0;
     }
 
@@ -70,43 +84,9 @@
       text-decoration: none;
     }
 
-    .aurora {
-      position: fixed;
-      width: 48vw;
-      height: 48vw;
-      min-width: 420px;
-      min-height: 420px;
-      filter: blur(80px);
-      opacity: 0.22;
-      border-radius: 999px;
-      pointer-events: none;
-      z-index: 0;
-      animation: float 14s ease-in-out infinite alternate;
-    }
-
-    .aurora.one {
-      left: -12vw;
-      top: 14vh;
-      background: var(--cyan);
-    }
-
-    .aurora.two {
-      right: -18vw;
-      top: 36vh;
-      background: var(--violet);
-      animation-delay: -4s;
-    }
-
-    .aurora.three {
-      left: 38vw;
-      bottom: -24vw;
-      background: var(--pink);
-      animation-delay: -8s;
-    }
-
-    @keyframes float {
-      from { transform: translate3d(0, 0, 0) scale(1); }
-      to { transform: translate3d(28px, -34px, 0) scale(1.08); }
+    img {
+      max-width: 100%;
+      display: block;
     }
 
     .page {
@@ -119,19 +99,24 @@
       margin: 0 auto;
     }
 
+    .topbar {
+      height: 4px;
+      background: linear-gradient(90deg, var(--cyan), var(--blue), var(--violet));
+    }
+
     .nav {
       position: sticky;
       top: 0;
-      z-index: 20;
-      backdrop-filter: blur(24px);
-      background: rgba(7, 8, 18, 0.62);
-      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      z-index: 50;
+      border-bottom: 1px solid rgba(148, 163, 184, 0.12);
+      background: rgba(5, 8, 22, 0.78);
+      backdrop-filter: blur(18px);
     }
 
     .nav-inner {
       width: min(var(--max), calc(100% - 40px));
       margin: 0 auto;
-      min-height: 76px;
+      min-height: 78px;
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -141,127 +126,150 @@
     .brand {
       display: inline-flex;
       align-items: center;
-      gap: 12px;
-      font-weight: 800;
+      gap: 14px;
+      min-width: 0;
+    }
+
+    .brand-logo {
+      width: 46px;
+      height: 46px;
+      flex: 0 0 46px;
+      display: grid;
+      place-items: center;
+      border-radius: 16px;
+      background:
+        linear-gradient(135deg, rgba(34, 211, 238, 0.24), rgba(59, 130, 246, 0.28)),
+        rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(148, 163, 184, 0.22);
+      box-shadow: 0 14px 34px rgba(34, 211, 238, 0.12);
+    }
+
+    .brand-logo svg {
+      width: 27px;
+      height: 27px;
+    }
+
+    .brand-text {
+      display: grid;
+      line-height: 1.05;
+    }
+
+    .brand-text strong {
+      font-size: 16px;
       letter-spacing: -0.03em;
     }
 
-    .brand-mark {
-      width: 40px;
-      height: 40px;
-      display: grid;
-      place-items: center;
-      border-radius: 14px;
-      background:
-        linear-gradient(135deg, rgba(100, 244, 255, 0.3), rgba(155, 124, 255, 0.28)),
-        rgba(255, 255, 255, 0.08);
-      border: 1px solid rgba(255, 255, 255, 0.18);
-      box-shadow: 0 0 42px rgba(100, 244, 255, 0.18);
-    }
-
-    .brand-mark svg {
-      width: 24px;
-      height: 24px;
-    }
-
-    .brand small {
-      display: block;
-      margin-top: 2px;
+    .brand-text span {
+      margin-top: 5px;
+      color: var(--muted-2);
       font-size: 11px;
-      color: var(--muted);
+      font-weight: 800;
       letter-spacing: 0.16em;
       text-transform: uppercase;
-      font-weight: 700;
     }
 
     .nav-links {
       display: flex;
-      gap: 10px;
       align-items: center;
+      gap: 6px;
       color: var(--muted);
       font-size: 14px;
+      font-weight: 650;
     }
 
     .nav-links a {
-      padding: 10px 13px;
+      padding: 10px 12px;
       border-radius: 999px;
       transition: 180ms ease;
     }
 
     .nav-links a:hover {
-      color: var(--text);
-      background: rgba(255, 255, 255, 0.08);
+      color: var(--white);
+      background: rgba(148, 163, 184, 0.1);
     }
 
-    .pill {
+    .nav-cta {
       display: inline-flex;
       align-items: center;
-      gap: 10px;
-      width: fit-content;
-      padding: 9px 13px;
-      border: 1px solid rgba(255, 255, 255, 0.16);
+      justify-content: center;
+      min-height: 40px;
+      padding: 0 15px;
       border-radius: 999px;
-      color: var(--muted);
-      background: rgba(255, 255, 255, 0.06);
-      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.22);
+      color: #06121f;
       font-size: 13px;
-      font-weight: 700;
-      letter-spacing: 0.02em;
-    }
-
-    .pulse {
-      width: 9px;
-      height: 9px;
-      border-radius: 999px;
-      background: var(--green);
-      box-shadow: 0 0 0 0 rgba(136, 255, 196, 0.7);
-      animation: pulse 2s infinite;
-    }
-
-    @keyframes pulse {
-      0% { box-shadow: 0 0 0 0 rgba(136, 255, 196, 0.55); }
-      70% { box-shadow: 0 0 0 10px rgba(136, 255, 196, 0); }
-      100% { box-shadow: 0 0 0 0 rgba(136, 255, 196, 0); }
+      font-weight: 900;
+      background: linear-gradient(135deg, var(--cyan), var(--blue));
+      box-shadow: 0 10px 28px rgba(34, 211, 238, 0.15);
     }
 
     .hero {
-      padding: 92px 0 52px;
+      padding: 92px 0 56px;
     }
 
     .hero-grid {
       display: grid;
-      grid-template-columns: minmax(0, 1.08fr) minmax(320px, 0.92fr);
+      grid-template-columns: minmax(0, 1.06fr) minmax(330px, 0.94fr);
+      gap: 44px;
       align-items: center;
-      gap: 42px;
     }
 
-    .hero h1 {
-      margin: 22px 0 18px;
-      max-width: 860px;
-      font-size: clamp(46px, 8vw, 92px);
-      line-height: 0.92;
-      letter-spacing: -0.08em;
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      width: fit-content;
+      padding: 9px 12px;
+      border-radius: 999px;
+      color: #d8faff;
+      border: 1px solid rgba(34, 211, 238, 0.24);
+      background: rgba(34, 211, 238, 0.08);
+      font-size: 13px;
+      font-weight: 850;
+      letter-spacing: 0.02em;
+    }
+
+    .eyebrow-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: var(--cyan);
+      box-shadow: 0 0 0 6px rgba(34, 211, 238, 0.11);
+    }
+
+    h1,
+    h2,
+    h3,
+    p {
+      text-wrap: pretty;
+    }
+
+    h1 {
+      margin: 24px 0 20px;
+      max-width: 780px;
+      font-size: clamp(44px, 7.4vw, 84px);
+      line-height: 0.96;
+      letter-spacing: -0.075em;
+    }
+
+    .hero-lead {
+      margin: 0;
+      max-width: 720px;
+      color: var(--muted);
+      font-size: clamp(17px, 2vw, 21px);
+      line-height: 1.72;
     }
 
     .gradient-text {
-      background: linear-gradient(90deg, var(--cyan), var(--blue), var(--violet), var(--pink));
+      background: linear-gradient(90deg, var(--cyan), var(--blue), var(--violet));
       -webkit-background-clip: text;
       background-clip: text;
       color: transparent;
     }
 
-    .hero p {
-      max-width: 720px;
-      color: var(--muted);
-      font-size: clamp(17px, 2vw, 22px);
-      line-height: 1.65;
-      margin: 0;
-    }
-
     .hero-actions {
       display: flex;
       flex-wrap: wrap;
-      gap: 14px;
+      gap: 13px;
       margin-top: 34px;
     }
 
@@ -269,597 +277,700 @@
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      gap: 10px;
       min-height: 48px;
       padding: 0 18px;
       border-radius: 999px;
-      font-weight: 800;
-      border: 1px solid rgba(255, 255, 255, 0.15);
+      font-weight: 900;
+      border: 1px solid rgba(148, 163, 184, 0.18);
       transition: 180ms ease;
     }
 
     .button.primary {
-      color: #03111a;
-      background: linear-gradient(135deg, var(--cyan), var(--violet));
-      box-shadow: 0 18px 46px rgba(100, 244, 255, 0.18);
+      color: #06121f;
+      background: linear-gradient(135deg, var(--cyan), var(--blue));
+      box-shadow: 0 16px 38px rgba(34, 211, 238, 0.16);
     }
 
     .button.secondary {
       color: var(--text);
-      background: rgba(255, 255, 255, 0.075);
+      background: rgba(148, 163, 184, 0.08);
     }
 
     .button:hover {
       transform: translateY(-2px);
-      filter: brightness(1.08);
+      filter: brightness(1.06);
     }
 
-    .hero-card {
-      position: relative;
-      overflow: hidden;
-      border-radius: var(--radius-lg);
-      border: 1px solid rgba(255, 255, 255, 0.14);
-      background:
-        linear-gradient(150deg, rgba(255, 255, 255, 0.13), rgba(255, 255, 255, 0.04)),
-        rgba(255, 255, 255, 0.05);
-      box-shadow: var(--shadow);
-      min-height: 520px;
-      padding: 28px;
-    }
-
-    .hero-card::before {
-      content: "";
-      position: absolute;
-      inset: -120px -120px auto auto;
-      width: 320px;
-      height: 320px;
-      border-radius: 999px;
-      background: rgba(100, 244, 255, 0.2);
-      filter: blur(44px);
-    }
-
-    .orbit {
-      position: absolute;
-      inset: 52px;
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      border-radius: 999px;
-      animation: rotate 26s linear infinite;
-    }
-
-    .orbit.two {
-      inset: 100px 44px 78px 86px;
-      animation-duration: 34s;
-      animation-direction: reverse;
-    }
-
-    @keyframes rotate {
-      to { transform: rotate(360deg); }
-    }
-
-    .node {
-      position: absolute;
-      width: 76px;
-      height: 76px;
-      border-radius: 24px;
-      display: grid;
-      place-items: center;
-      font-weight: 900;
-      color: #06101b;
-      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.28);
-    }
-
-    .node.a { left: 20px; top: 72px; background: linear-gradient(135deg, var(--cyan), #ffffff); }
-    .node.b { right: 36px; top: 138px; background: linear-gradient(135deg, var(--violet), #ffffff); }
-    .node.c { left: 70px; bottom: 64px; background: linear-gradient(135deg, var(--green), #ffffff); }
-    .node.d { right: 68px; bottom: 70px; background: linear-gradient(135deg, var(--pink), #ffffff); }
-
-    .core {
-      position: absolute;
-      left: 50%;
-      top: 50%;
-      transform: translate(-50%, -50%);
-      width: 210px;
-      height: 210px;
-      display: grid;
-      place-items: center;
-      text-align: center;
-      padding: 24px;
-      border-radius: 58px;
-      background:
-        radial-gradient(circle at 30% 20%, rgba(255, 255, 255, 0.26), transparent 36%),
-        linear-gradient(145deg, rgba(100, 244, 255, 0.2), rgba(155, 124, 255, 0.18));
-      border: 1px solid rgba(255, 255, 255, 0.18);
-      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.18), 0 26px 76px rgba(0, 0, 0, 0.35);
-    }
-
-    .core strong {
-      display: block;
-      font-size: 34px;
-      line-height: 0.9;
-      letter-spacing: -0.08em;
-    }
-
-    .core span {
-      display: block;
-      margin-top: 12px;
-      color: var(--muted);
-      font-size: 13px;
-      line-height: 1.4;
-    }
-
-    .hero-stat {
-      position: absolute;
-      left: 24px;
-      right: 24px;
-      bottom: 24px;
+    .hero-meta {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 12px;
+      margin-top: 34px;
+      max-width: 680px;
     }
 
-    .stat {
+    .meta-card {
       padding: 16px;
-      border-radius: 20px;
-      background: rgba(0, 0, 0, 0.24);
-      border: 1px solid rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(148, 163, 184, 0.16);
+      border-radius: var(--radius-md);
+      background: rgba(13, 19, 40, 0.62);
     }
 
-    .stat strong {
+    .meta-card strong {
       display: block;
-      font-size: 22px;
+      font-size: 20px;
       letter-spacing: -0.04em;
     }
 
-    .stat span {
+    .meta-card span {
       display: block;
-      margin-top: 4px;
+      margin-top: 5px;
+      color: var(--muted-2);
       font-size: 12px;
+      line-height: 1.45;
+    }
+
+    .identity-card {
+      position: relative;
+      overflow: hidden;
+      min-height: 560px;
+      border-radius: var(--radius-xl);
+      border: 1px solid rgba(148, 163, 184, 0.2);
+      background:
+        linear-gradient(145deg, rgba(59, 130, 246, 0.13), rgba(34, 211, 238, 0.05) 42%, rgba(139, 92, 246, 0.1)),
+        rgba(13, 19, 40, 0.72);
+      box-shadow: var(--shadow);
+    }
+
+    .identity-card::before {
+      content: "";
+      position: absolute;
+      inset: 1px;
+      border-radius: calc(var(--radius-xl) - 1px);
+      background:
+        radial-gradient(circle at 30% 18%, rgba(34, 211, 238, 0.16), transparent 24%),
+        radial-gradient(circle at 75% 62%, rgba(59, 130, 246, 0.14), transparent 30%);
+      pointer-events: none;
+    }
+
+    .identity-inner {
+      position: relative;
+      z-index: 1;
+      height: 100%;
+      padding: 30px;
+      display: grid;
+      grid-template-rows: auto 1fr auto;
+      gap: 24px;
+    }
+
+    .identity-top {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 18px;
+    }
+
+    .status-pill {
+      padding: 8px 11px;
+      border-radius: 999px;
+      color: #d8faff;
+      background: rgba(34, 211, 238, 0.09);
+      border: 1px solid rgba(34, 211, 238, 0.22);
+      font-size: 12px;
+      font-weight: 850;
+    }
+
+    .brand-lockup {
+      display: grid;
+      gap: 14px;
+      place-items: start;
+    }
+
+    .brand-lockup .mark {
+      width: 74px;
+      height: 74px;
+      display: grid;
+      place-items: center;
+      border-radius: 24px;
+      background: linear-gradient(135deg, var(--cyan), var(--blue));
+      box-shadow: 0 18px 42px rgba(34, 211, 238, 0.18);
+    }
+
+    .brand-lockup h2 {
+      margin: 0;
+      max-width: 440px;
+      font-size: clamp(32px, 4.6vw, 54px);
+      line-height: 0.98;
+      letter-spacing: -0.065em;
+    }
+
+    .brand-lockup p {
+      margin: 0;
+      max-width: 410px;
       color: var(--muted);
+      line-height: 1.68;
+    }
+
+    .system-map {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+    }
+
+    .system-item {
+      position: relative;
+      min-height: 104px;
+      padding: 16px;
+      border-radius: 20px;
+      background: rgba(5, 8, 22, 0.42);
+      border: 1px solid rgba(148, 163, 184, 0.16);
+    }
+
+    .system-item::before {
+      content: "";
+      position: absolute;
+      left: 16px;
+      top: 16px;
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: var(--item, var(--cyan));
+    }
+
+    .system-item strong {
+      display: block;
+      margin-left: 18px;
+      font-size: 15px;
+      letter-spacing: -0.02em;
+    }
+
+    .system-item span {
+      display: block;
+      margin-top: 12px;
+      color: var(--muted-2);
+      font-size: 12px;
+      line-height: 1.45;
     }
 
     section {
-      padding: 72px 0;
+      padding: 70px 0;
     }
 
     .section-head {
-      display: flex;
-      justify-content: space-between;
-      gap: 24px;
+      display: grid;
+      grid-template-columns: minmax(0, 0.98fr) minmax(280px, 0.52fr);
+      gap: 28px;
       align-items: end;
-      margin-bottom: 26px;
+      margin-bottom: 28px;
+    }
+
+    .kicker {
+      display: block;
+      margin-bottom: 12px;
+      color: var(--cyan);
+      font-size: 12px;
+      font-weight: 950;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
     }
 
     .section-head h2 {
       margin: 0;
       max-width: 760px;
-      font-size: clamp(32px, 5vw, 58px);
+      font-size: clamp(31px, 5vw, 56px);
       line-height: 1;
       letter-spacing: -0.06em;
     }
 
     .section-head p {
       margin: 0;
-      max-width: 430px;
       color: var(--muted);
-      line-height: 1.65;
+      line-height: 1.72;
     }
 
-    .glass {
-      border: 1px solid rgba(255, 255, 255, 0.13);
-      background: rgba(255, 255, 255, 0.065);
-      box-shadow: var(--shadow);
-      backdrop-filter: blur(20px);
+    .panel {
+      border: 1px solid rgba(148, 163, 184, 0.16);
+      background: rgba(13, 19, 40, 0.66);
+      border-radius: var(--radius-xl);
+      box-shadow: var(--shadow-soft);
     }
 
-    .welcome-panel {
+    .intro-panel {
       display: grid;
-      grid-template-columns: minmax(0, 1fr) minmax(260px, 0.46fr);
-      gap: 22px;
-      border-radius: var(--radius-lg);
+      grid-template-columns: minmax(0, 1fr) 340px;
+      gap: 24px;
       padding: 28px;
     }
 
-    .welcome-panel h3 {
-      margin: 0 0 16px;
-      font-size: clamp(26px, 4vw, 42px);
-      letter-spacing: -0.05em;
+    .intro-copy {
+      padding: 18px;
     }
 
-    .welcome-panel p {
+    .intro-copy h3 {
+      margin: 0 0 14px;
+      font-size: clamp(26px, 3.5vw, 40px);
+      line-height: 1.04;
+      letter-spacing: -0.052em;
+    }
+
+    .intro-copy p {
       margin: 0;
       color: var(--muted);
-      line-height: 1.78;
-      font-size: 17px;
+      line-height: 1.82;
+      font-size: 16px;
     }
 
-    .quote-card {
-      border-radius: var(--radius-md);
-      padding: 22px;
+    .quote-box {
+      position: relative;
+      overflow: hidden;
+      border-radius: var(--radius-lg);
+      padding: 24px;
       background:
-        linear-gradient(150deg, rgba(100, 244, 255, 0.14), rgba(155, 124, 255, 0.1)),
-        rgba(0, 0, 0, 0.22);
-      border: 1px solid rgba(255, 255, 255, 0.12);
+        linear-gradient(135deg, rgba(34, 211, 238, 0.12), rgba(59, 130, 246, 0.11)),
+        rgba(5, 8, 22, 0.36);
+      border: 1px solid rgba(34, 211, 238, 0.18);
     }
 
-    .quote-card .label {
+    .quote-box::after {
+      content: "";
+      position: absolute;
+      right: -40px;
+      bottom: -50px;
+      width: 150px;
+      height: 150px;
+      border-radius: 999px;
+      background: rgba(34, 211, 238, 0.15);
+      filter: blur(28px);
+    }
+
+    .quote-box span {
+      position: relative;
+      z-index: 1;
       color: var(--cyan);
-      font-weight: 900;
       font-size: 12px;
+      font-weight: 950;
       letter-spacing: 0.18em;
       text-transform: uppercase;
     }
 
-    .quote-card blockquote {
+    .quote-box blockquote {
+      position: relative;
+      z-index: 1;
       margin: 18px 0 0;
-      font-size: 22px;
-      line-height: 1.32;
-      letter-spacing: -0.04em;
-      font-weight: 800;
+      font-size: 24px;
+      line-height: 1.3;
+      letter-spacing: -0.046em;
+      font-weight: 900;
     }
 
-    .cards {
+    .companies {
       display: grid;
       grid-template-columns: repeat(12, 1fr);
-      gap: 18px;
+      gap: 16px;
     }
 
-    .company-card {
+    .company {
       grid-column: span 6;
       position: relative;
       overflow: hidden;
-      min-height: 330px;
+      min-height: 326px;
       padding: 24px;
-      border-radius: var(--radius-md);
-      border: 1px solid rgba(255, 255, 255, 0.13);
+      border-radius: var(--radius-lg);
+      border: 1px solid rgba(148, 163, 184, 0.16);
       background:
-        linear-gradient(150deg, rgba(255, 255, 255, 0.095), rgba(255, 255, 255, 0.035)),
-        rgba(255, 255, 255, 0.055);
-      transition: 220ms ease;
+        linear-gradient(145deg, rgba(255, 255, 255, 0.035), rgba(255, 255, 255, 0.015)),
+        rgba(13, 19, 40, 0.68);
+      transition: 200ms ease;
     }
 
-    .company-card.large {
+    .company.main {
       grid-column: span 12;
-      min-height: 300px;
+      min-height: 292px;
+      background:
+        linear-gradient(135deg, rgba(34, 211, 238, 0.11), rgba(59, 130, 246, 0.075), rgba(139, 92, 246, 0.08)),
+        rgba(13, 19, 40, 0.72);
     }
 
-    .company-card:hover {
-      transform: translateY(-5px);
-      border-color: rgba(100, 244, 255, 0.38);
-      box-shadow: 0 24px 80px rgba(0, 0, 0, 0.42), 0 0 0 1px rgba(100, 244, 255, 0.08);
-    }
-
-    .company-card::after {
+    .company::after {
       content: "";
       position: absolute;
-      right: -80px;
-      bottom: -80px;
+      right: -72px;
+      bottom: -86px;
       width: 220px;
       height: 220px;
       border-radius: 999px;
       background: var(--accent, var(--cyan));
-      opacity: 0.12;
-      filter: blur(24px);
+      opacity: 0.11;
+      filter: blur(22px);
     }
 
-    .company-top {
+    .company:hover {
+      transform: translateY(-4px);
+      border-color: rgba(34, 211, 238, 0.32);
+      box-shadow: var(--shadow-soft);
+    }
+
+    .company-header {
+      position: relative;
+      z-index: 1;
       display: flex;
       justify-content: space-between;
-      align-items: flex-start;
       gap: 18px;
+      align-items: flex-start;
       margin-bottom: 22px;
     }
 
-    .company-icon {
-      width: 58px;
-      height: 58px;
+    .company-mark {
+      width: 56px;
+      height: 56px;
+      border-radius: 18px;
       display: grid;
       place-items: center;
-      border-radius: 20px;
-      color: #06101b;
+      color: #06121f;
       font-weight: 950;
-      background: linear-gradient(135deg, var(--accent, var(--cyan)), #ffffff);
-      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.25);
+      letter-spacing: -0.04em;
+      background: linear-gradient(135deg, var(--accent, var(--cyan)), var(--white));
+      box-shadow: 0 16px 34px rgba(0, 0, 0, 0.2);
     }
 
-    .tag {
+    .label {
       padding: 8px 10px;
       border-radius: 999px;
       color: var(--muted);
-      background: rgba(0, 0, 0, 0.22);
-      border: 1px solid rgba(255, 255, 255, 0.1);
+      background: rgba(5, 8, 22, 0.42);
+      border: 1px solid rgba(148, 163, 184, 0.14);
       font-size: 12px;
-      font-weight: 800;
+      font-weight: 850;
       white-space: nowrap;
     }
 
-    .company-card h3 {
+    .company h3,
+    .company p,
+    .company .tags {
+      position: relative;
+      z-index: 1;
+    }
+
+    .company h3 {
       margin: 0 0 12px;
       font-size: 28px;
-      letter-spacing: -0.05em;
+      letter-spacing: -0.052em;
     }
 
-    .company-card p {
+    .company p {
       margin: 0;
+      max-width: 930px;
       color: var(--muted);
-      line-height: 1.72;
-      max-width: 920px;
+      line-height: 1.75;
     }
 
-    .chips {
+    .tags {
       display: flex;
       flex-wrap: wrap;
       gap: 8px;
       margin-top: 22px;
     }
 
-    .chip {
+    .tag {
       padding: 8px 10px;
       border-radius: 999px;
-      background: rgba(255, 255, 255, 0.07);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      color: #d9def0;
+      color: #dbeafe;
+      background: rgba(59, 130, 246, 0.09);
+      border: 1px solid rgba(59, 130, 246, 0.16);
       font-size: 12px;
-      font-weight: 750;
+      font-weight: 760;
     }
 
-    .values-grid {
+    .principles {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
-      gap: 16px;
+      gap: 15px;
     }
 
-    .value-card {
-      min-height: 210px;
+    .principle {
+      min-height: 240px;
       padding: 20px;
-      border-radius: var(--radius-md);
-      border: 1px solid rgba(255, 255, 255, 0.12);
-      background: rgba(255, 255, 255, 0.055);
+      border-radius: var(--radius-lg);
+      border: 1px solid rgba(148, 163, 184, 0.15);
+      background: rgba(13, 19, 40, 0.64);
     }
 
-    .value-card .number {
+    .principle-number {
       color: var(--cyan);
-      font-weight: 950;
-      letter-spacing: -0.04em;
       font-size: 28px;
+      font-weight: 950;
+      letter-spacing: -0.055em;
     }
 
-    .value-card h3 {
-      margin: 22px 0 10px;
-      letter-spacing: -0.04em;
-      font-size: 21px;
+    .principle h3 {
+      margin: 28px 0 10px;
+      font-size: 22px;
+      line-height: 1.08;
+      letter-spacing: -0.045em;
     }
 
-    .value-card p {
+    .principle p {
       margin: 0;
       color: var(--muted);
-      line-height: 1.65;
       font-size: 14px;
+      line-height: 1.68;
     }
 
-    .timeline {
-      position: relative;
+    .workflow {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
-      gap: 16px;
+      gap: 15px;
     }
 
-    .step {
+    .workflow-step {
       position: relative;
-      padding: 20px;
-      min-height: 250px;
-      border-radius: var(--radius-md);
-      background: rgba(255, 255, 255, 0.058);
-      border: 1px solid rgba(255, 255, 255, 0.12);
       overflow: hidden;
+      min-height: 270px;
+      padding: 20px;
+      border-radius: var(--radius-lg);
+      border: 1px solid rgba(148, 163, 184, 0.15);
+      background: rgba(13, 19, 40, 0.64);
     }
 
-    .step::before {
+    .workflow-step::before {
       content: "";
       position: absolute;
-      left: 0;
-      top: 0;
+      inset: 0 auto auto 0;
       width: 100%;
       height: 3px;
-      background: linear-gradient(90deg, var(--cyan), var(--violet));
+      background: linear-gradient(90deg, var(--cyan), var(--blue), var(--violet));
     }
 
-    .step small {
+    .workflow-step small {
       color: var(--cyan);
-      font-weight: 900;
-      letter-spacing: 0.14em;
+      font-size: 12px;
+      font-weight: 950;
+      letter-spacing: 0.16em;
       text-transform: uppercase;
     }
 
-    .step h3 {
-      margin: 20px 0 10px;
+    .workflow-step h3 {
+      margin: 22px 0 10px;
       font-size: 22px;
-      letter-spacing: -0.04em;
+      line-height: 1.1;
+      letter-spacing: -0.045em;
     }
 
-    .step p {
+    .workflow-step p {
       margin: 0;
       color: var(--muted);
-      line-height: 1.65;
       font-size: 14px;
-    }
-
-    .stack-panel {
-      border-radius: var(--radius-lg);
-      padding: 24px;
-      display: grid;
-      grid-template-columns: 0.9fr 1.1fr;
-      gap: 18px;
-      align-items: stretch;
-    }
-
-    .stack-copy {
-      padding: 22px;
-      border-radius: var(--radius-md);
-      background: rgba(0, 0, 0, 0.22);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-    }
-
-    .stack-copy h3 {
-      margin: 0 0 14px;
-      font-size: 30px;
-      letter-spacing: -0.05em;
-    }
-
-    .stack-copy p {
-      margin: 0;
-      color: var(--muted);
       line-height: 1.7;
     }
 
-    .tools {
+    .onboarding-grid {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 12px;
-    }
-
-    .tool {
-      padding: 16px;
-      border-radius: 18px;
-      background: rgba(255, 255, 255, 0.064);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-    }
-
-    .tool strong {
-      display: block;
-      margin-bottom: 6px;
-    }
-
-    .tool span {
-      color: var(--muted);
-      font-size: 13px;
-      line-height: 1.5;
-    }
-
-    .onboarding {
-      display: grid;
-      grid-template-columns: 0.85fr 1.15fr;
-      gap: 18px;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 16px;
       align-items: start;
     }
 
     .checklist {
-      border-radius: var(--radius-lg);
       padding: 24px;
+      border-radius: var(--radius-xl);
     }
 
     .checklist h3 {
       margin: 0 0 18px;
-      font-size: 28px;
-      letter-spacing: -0.05em;
+      font-size: 30px;
+      letter-spacing: -0.055em;
     }
 
     .check-item {
       display: grid;
-      grid-template-columns: 28px 1fr;
+      grid-template-columns: 30px 1fr;
       gap: 12px;
-      padding: 14px 0;
-      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      padding: 15px 0;
+      border-top: 1px solid rgba(148, 163, 184, 0.13);
       color: var(--muted);
-      line-height: 1.55;
+      line-height: 1.58;
     }
 
     .check-item:first-of-type {
       border-top: 0;
     }
 
-    .check-dot {
-      width: 24px;
-      height: 24px;
+    .check {
+      width: 26px;
+      height: 26px;
       display: grid;
       place-items: center;
       border-radius: 999px;
-      background: rgba(100, 244, 255, 0.14);
-      color: var(--cyan);
-      font-weight: 900;
+      color: #06121f;
+      background: linear-gradient(135deg, var(--cyan), var(--blue));
+      font-size: 14px;
+      font-weight: 950;
     }
 
-    .rules {
+    .conduct-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      gap: 14px;
+      gap: 13px;
     }
 
-    .rule {
-      border-radius: var(--radius-md);
-      padding: 20px;
-      background: rgba(255, 255, 255, 0.055);
-      border: 1px solid rgba(255, 255, 255, 0.12);
+    .conduct {
+      min-height: 154px;
+      padding: 19px;
+      border-radius: var(--radius-lg);
+      border: 1px solid rgba(148, 163, 184, 0.15);
+      background: rgba(13, 19, 40, 0.64);
     }
 
-    .rule h3 {
+    .conduct h3 {
       margin: 0 0 10px;
       font-size: 20px;
-      letter-spacing: -0.04em;
+      letter-spacing: -0.042em;
     }
 
-    .rule p {
+    .conduct p {
       margin: 0;
       color: var(--muted);
-      line-height: 1.62;
       font-size: 14px;
+      line-height: 1.66;
+    }
+
+    .resources {
+      display: grid;
+      grid-template-columns: 0.88fr 1.12fr;
+      gap: 16px;
+      align-items: stretch;
+    }
+
+    .resource-copy {
+      padding: 26px;
+      border-radius: var(--radius-xl);
+      background:
+        linear-gradient(135deg, rgba(34, 211, 238, 0.09), rgba(59, 130, 246, 0.07)),
+        rgba(13, 19, 40, 0.72);
+      border: 1px solid rgba(148, 163, 184, 0.16);
+    }
+
+    .resource-copy h3 {
+      margin: 0 0 12px;
+      font-size: 32px;
+      line-height: 1.04;
+      letter-spacing: -0.055em;
+    }
+
+    .resource-copy p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.72;
+    }
+
+    .tools {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 13px;
+    }
+
+    .tool {
+      padding: 18px;
+      border-radius: var(--radius-lg);
+      border: 1px solid rgba(148, 163, 184, 0.15);
+      background: rgba(13, 19, 40, 0.64);
+    }
+
+    .tool strong {
+      display: block;
+      margin-bottom: 8px;
+      font-size: 16px;
+      letter-spacing: -0.02em;
+    }
+
+    .tool span {
+      display: block;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.6;
+    }
+
+    .palette {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 12px;
+      margin-top: 22px;
+    }
+
+    .swatch {
+      min-height: 92px;
+      padding: 13px;
+      border-radius: 18px;
+      border: 1px solid rgba(148, 163, 184, 0.16);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      box-shadow: inset 0 -50px 50px rgba(0, 0, 0, 0.2);
+    }
+
+    .swatch strong {
+      font-size: 13px;
+      letter-spacing: -0.02em;
+    }
+
+    .swatch span {
+      margin-top: 3px;
+      color: rgba(248, 250, 252, 0.72);
+      font-size: 11px;
+      font-weight: 700;
     }
 
     .cta {
-      padding: 36px;
-      border-radius: var(--radius-lg);
-      text-align: center;
+      position: relative;
       overflow: hidden;
-      position: relative;
-    }
-
-    .cta::before {
-      content: "";
-      position: absolute;
-      inset: -120px 14% auto;
-      height: 260px;
-      background: linear-gradient(90deg, var(--cyan), var(--violet), var(--pink));
-      filter: blur(90px);
-      opacity: 0.2;
-    }
-
-    .cta > * {
-      position: relative;
+      padding: 38px;
+      text-align: center;
+      border-radius: var(--radius-xl);
+      background:
+        radial-gradient(circle at 50% 0%, rgba(34, 211, 238, 0.18), transparent 34%),
+        linear-gradient(135deg, rgba(34, 211, 238, 0.09), rgba(59, 130, 246, 0.08), rgba(139, 92, 246, 0.08)),
+        rgba(13, 19, 40, 0.74);
+      border: 1px solid rgba(148, 163, 184, 0.16);
+      box-shadow: var(--shadow-soft);
     }
 
     .cta h2 {
       margin: 0 auto 16px;
-      max-width: 840px;
-      font-size: clamp(34px, 5vw, 64px);
+      max-width: 880px;
+      font-size: clamp(34px, 5vw, 62px);
       line-height: 0.98;
       letter-spacing: -0.07em;
     }
 
     .cta p {
       margin: 0 auto;
-      max-width: 730px;
+      max-width: 760px;
       color: var(--muted);
       line-height: 1.75;
       font-size: 17px;
     }
 
     footer {
-      padding: 30px 0 44px;
-      color: var(--muted);
+      position: relative;
+      z-index: 1;
+      padding: 32px 0 44px;
+      color: var(--muted-2);
       font-size: 14px;
     }
 
     .footer-inner {
       display: flex;
+      align-items: center;
       justify-content: space-between;
       gap: 20px;
-      border-top: 1px solid rgba(255, 255, 255, 0.1);
       padding-top: 24px;
+      border-top: 1px solid rgba(148, 163, 184, 0.13);
     }
 
     .fade-up {
       opacity: 0;
-      transform: translateY(22px);
-      transition: 700ms ease;
+      transform: translateY(18px);
+      transition: 640ms ease;
     }
 
     .fade-up.visible {
@@ -867,73 +978,60 @@
       transform: translateY(0);
     }
 
-    @media (max-width: 980px) {
+    @media (max-width: 1040px) {
       .hero-grid,
-      .welcome-panel,
-      .stack-panel,
-      .onboarding {
+      .intro-panel,
+      .onboarding-grid,
+      .resources,
+      .section-head {
         grid-template-columns: 1fr;
       }
 
-      .values-grid,
-      .timeline {
+      .identity-card {
+        min-height: 520px;
+      }
+
+      .principles,
+      .workflow,
+      .palette {
         grid-template-columns: repeat(2, 1fr);
       }
 
-      .section-head {
-        display: block;
-      }
-
       .section-head p {
-        margin-top: 14px;
+        max-width: 760px;
+      }
+    }
+
+    @media (max-width: 760px) {
+      .container,
+      .nav-inner {
+        width: min(var(--max), calc(100% - 28px));
       }
 
       .nav-links {
         display: none;
       }
-    }
 
-    @media (max-width: 720px) {
-      .container,
-      .nav-inner {
-        width: min(100% - 28px, var(--max));
+      .nav-cta {
+        display: none;
       }
 
       .hero {
-        padding-top: 58px;
+        padding: 62px 0 38px;
       }
 
-      .hero-card {
-        min-height: 460px;
-        padding: 18px;
-      }
-
-      .core {
-        width: 174px;
-        height: 174px;
-        border-radius: 44px;
-      }
-
-      .core strong {
-        font-size: 28px;
-      }
-
-      .node {
-        width: 60px;
-        height: 60px;
-        border-radius: 18px;
-      }
-
-      .hero-stat,
+      .hero-meta,
+      .system-map,
+      .conduct-grid,
       .tools,
-      .rules,
-      .values-grid,
-      .timeline {
+      .principles,
+      .workflow,
+      .palette {
         grid-template-columns: 1fr;
       }
 
-      .company-card,
-      .company-card.large {
+      .company,
+      .company.main {
         grid-column: span 12;
       }
 
@@ -941,29 +1039,50 @@
         padding: 52px 0;
       }
 
+      .identity-inner,
+      .intro-panel,
+      .checklist,
+      .cta {
+        padding: 22px;
+      }
+
+      .identity-card {
+        min-height: auto;
+      }
+
+      .identity-inner {
+        display: block;
+      }
+
+      .system-map {
+        margin-top: 28px;
+      }
+
       .footer-inner {
         display: block;
+      }
+
+      .footer-inner div + div {
+        margin-top: 10px;
       }
     }
   </style>
 </head>
 <body>
-  <div class="aurora one"></div>
-  <div class="aurora two"></div>
-  <div class="aurora three"></div>
+  <div class="topbar" aria-hidden="true"></div>
 
   <nav class="nav">
     <div class="nav-inner">
       <a class="brand" href="#top" aria-label="The Loop Code Group">
-        <span class="brand-mark" aria-hidden="true">
+        <span class="brand-logo" aria-hidden="true">
           <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M12 24C12 14.6 19.1 8 28.1 8C35.4 8 41 13.1 41 19.8C41 26.3 36.1 31.1 29.7 31.1H21.9" stroke="white" stroke-width="4" stroke-linecap="round"/>
-            <path d="M36 24C36 33.4 28.9 40 19.9 40C12.6 40 7 34.9 7 28.2C7 21.7 11.9 16.9 18.3 16.9H26.1" stroke="#64f4ff" stroke-width="4" stroke-linecap="round"/>
+            <path d="M12 24C12 14.45 19.28 8 28.2 8C35.35 8 41 13 41 19.72C41 26.22 36.04 31.05 29.66 31.05H22.2" stroke="#ffffff" stroke-width="4" stroke-linecap="round"/>
+            <path d="M36 24C36 33.55 28.72 40 19.8 40C12.65 40 7 35 7 28.28C7 21.78 11.96 16.95 18.34 16.95H25.8" stroke="#06121f" stroke-width="4" stroke-linecap="round"/>
           </svg>
         </span>
-        <span>
-          The Loop Code
-          <small>Group Onboarding</small>
+        <span class="brand-text">
+          <strong>The Loop Code Group</strong>
+          <span>Onboarding</span>
         </span>
       </a>
 
@@ -972,7 +1091,10 @@
         <a href="#empresas">Empresas</a>
         <a href="#cultura">Cultura</a>
         <a href="#primeira-semana">Primeira semana</a>
+        <a href="#padrao-visual">Padrão visual</a>
       </div>
+
+      <a class="nav-cta" href="#primeira-semana">Começar</a>
     </div>
   </nav>
 
@@ -980,42 +1102,78 @@
     <header class="hero container">
       <div class="hero-grid">
         <div>
-          <div class="pill"><span class="pulse"></span> Boas-vindas oficiais ao ecossistema</div>
-          <h1>Bem-vindo ao <span class="gradient-text">Loop</span>.</h1>
-          <p>
-            Você agora faz parte de um grupo que transforma ideias em produtos digitais, páginas de alta performance, experiências interativas, inteligência artificial privada e operações comerciais mais inteligentes.
+          <div class="eyebrow">
+            <span class="eyebrow-dot"></span>
+            Boas-vindas ao ecossistema The Loop Code
+          </div>
+
+          <h1>
+            Você entrou para construir o próximo <span class="gradient-text">ciclo digital</span>.
+          </h1>
+
+          <p class="hero-lead">
+            Somos um grupo de empresas focado em transformar ideias complexas em produtos digitais claros, rápidos, bonitos e úteis: sites, landing pages, sistemas web, experiências interativas, IA privada e operações digitais.
           </p>
+
           <div class="hero-actions">
-            <a class="button primary" href="#primeira-semana">Começar onboarding</a>
-            <a class="button secondary" href="#empresas">Conhecer o grupo</a>
+            <a class="button primary" href="#primeira-semana">Ver onboarding</a>
+            <a class="button secondary" href="#empresas">Conhecer empresas</a>
+          </div>
+
+          <div class="hero-meta" aria-label="Pilares principais">
+            <div class="meta-card">
+              <strong>Performance</strong>
+              <span>Produtos rápidos, responsivos e otimizados para conversão.</span>
+            </div>
+            <div class="meta-card">
+              <strong>Design</strong>
+              <span>Interfaces claras, elegantes e alinhadas à identidade da marca.</span>
+            </div>
+            <div class="meta-card">
+              <strong>IA aplicada</strong>
+              <span>Automação com propósito, privacidade e ganho operacional real.</span>
+            </div>
           </div>
         </div>
 
-        <aside class="hero-card" aria-label="Mapa visual do grupo The Loop Code">
-          <div class="orbit"></div>
-          <div class="orbit two"></div>
-          <div class="node a">TLC</div>
-          <div class="node b">LP</div>
-          <div class="node c">NX</div>
-          <div class="node d">CP</div>
-          <div class="core">
-            <div>
-              <strong>The Loop Code</strong>
-              <span>código, design, IA e operação conectados em um só ecossistema.</span>
+        <aside class="identity-card" aria-label="Resumo visual do grupo">
+          <div class="identity-inner">
+            <div class="identity-top">
+              <div class="brand-lockup">
+                <div class="mark" aria-hidden="true">
+                  <svg width="38" height="38" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 24C12 14.45 19.28 8 28.2 8C35.35 8 41 13 41 19.72C41 26.22 36.04 31.05 29.66 31.05H22.2" stroke="#ffffff" stroke-width="4" stroke-linecap="round"/>
+                    <path d="M36 24C36 33.55 28.72 40 19.8 40C12.65 40 7 35 7 28.28C7 21.78 11.96 16.95 18.34 16.95H25.8" stroke="#06121f" stroke-width="4" stroke-linecap="round"/>
+                  </svg>
+                </div>
+                <h2>Um grupo, várias frentes, um padrão.</h2>
+                <p>
+                  Cada marca resolve uma camada do ecossistema: presença digital, criação de páginas, jogos, inteligência artificial e operação comercial.
+                </p>
+              </div>
+
+              <span class="status-pill">2026</span>
             </div>
-          </div>
-          <div class="hero-stat">
-            <div class="stat">
-              <strong>Next.js</strong>
-              <span>performance e SEO</span>
-            </div>
-            <div class="stat">
-              <strong>AI-first</strong>
-              <span>automação real</span>
-            </div>
-            <div class="stat">
-              <strong>Local-first</strong>
-              <span>privacidade e controle</span>
+
+            <div></div>
+
+            <div class="system-map">
+              <div class="system-item" style="--item: var(--cyan)">
+                <strong>The Loop Code</strong>
+                <span>Sites, sistemas, landing pages, SEO, performance e tecnologia sob medida.</span>
+              </div>
+              <div class="system-item" style="--item: var(--blue)">
+                <strong>Loop Pages</strong>
+                <span>Criação, edição, publicação e gestão de páginas com apoio de IA.</span>
+              </div>
+              <div class="system-item" style="--item: var(--violet)">
+                <strong>Nexus AI</strong>
+                <span>IA local-first, automação, memória vetorial, IoT e assistentes privados.</span>
+              </div>
+              <div class="system-item" style="--item: var(--amber)">
+                <strong>Comprow.com</strong>
+                <span>Operação comercial, presença digital, vitrine, venda e automação.</span>
+              </div>
             </div>
           </div>
         </aside>
@@ -1023,116 +1181,132 @@
     </header>
 
     <section id="grupo" class="container fade-up">
-      <div class="welcome-panel glass">
+      <div class="section-head">
         <div>
-          <h3>O que somos</h3>
+          <span class="kicker">Nossa essência</span>
+          <h2>O que a The Loop Code Group representa</h2>
+        </div>
+        <p>
+          Uma estrutura de empresas digitais criada para unir engenharia, design, IA, marketing e operação em produtos que realmente saem do papel.
+        </p>
+      </div>
+
+      <div class="intro-panel panel">
+        <div class="intro-copy">
+          <h3>Tecnologia com estética, intenção e continuidade.</h3>
           <p>
-            A The Loop Code é o núcleo de tecnologia e criação do grupo. Nascemos para tirar ideias do papel e transformar conceitos abstratos em experiências digitais de alto impacto: sites, landing pages, sistemas web, automações, produtos com IA e soluções próprias.
+            A The Loop Code é o núcleo de desenvolvimento e criação do grupo. Nossa base está em sites de alta performance, landing pages, sistemas web, e-commerce, SEO técnico, interfaces responsivas e produtos sob medida.
             <br /><br />
-            Nosso foco é simples: criar tecnologia que funcione, venda, escale e continue evoluindo. Aqui, design não é enfeite. Código não é ritual secreto. IA não é mágica. Tudo precisa servir a uma experiência melhor para clientes, usuários e equipe.
+            A partir desse núcleo, o grupo se expande para produtos próprios, experiências interativas, inteligência artificial privada e soluções comerciais. O objetivo é simples: criar tecnologia que funcione, comunique valor e evolua com clareza.
           </p>
         </div>
-        <div class="quote-card">
-          <span class="label">Nossa direção</span>
+
+        <aside class="quote-box">
+          <span>Direção do grupo</span>
           <blockquote>
-            Transformar ideias complexas em produtos digitais claros, bonitos, rápidos e úteis.
+            Transformar conceitos abstratos em experiências digitais de alto impacto.
           </blockquote>
-        </div>
+        </aside>
       </div>
     </section>
 
     <section id="empresas" class="container fade-up">
       <div class="section-head">
-        <h2>As frentes do nosso ecossistema</h2>
-        <p>Cada marca tem um papel próprio, mas todas seguem a mesma lógica: unir estética, tecnologia e resultado.</p>
+        <div>
+          <span class="kicker">Ecossistema</span>
+          <h2>As empresas do grupo</h2>
+        </div>
+        <p>
+          Cada frente tem uma função própria, mas todas compartilham o mesmo padrão: performance, clareza visual, produto bem pensado e entrega contínua.
+        </p>
       </div>
 
-      <div class="cards">
-        <article class="company-card large" style="--accent: var(--cyan)">
-          <div class="company-top">
-            <div class="company-icon">∞</div>
-            <span class="tag">Empresa-mãe</span>
+      <div class="companies">
+        <article class="company main" style="--accent: var(--cyan)">
+          <div class="company-header">
+            <div class="company-mark">∞</div>
+            <span class="label">Núcleo do grupo</span>
           </div>
           <h3>The Loop Code</h3>
           <p>
-            A base do grupo. Atuamos com criação de sites, landing pages, sistemas web e soluções digitais sob medida. Nosso diferencial está em performance, código limpo, SEO técnico, experiência mobile first, design aplicado e parceria contínua com os clientes.
+            Desenvolvimento de sites, landing pages, e-commerce e sistemas web sob medida. A The Loop Code concentra a capacidade de transformar ideias, marcas e operações em produtos digitais rápidos, responsivos, escaláveis e preparados para conversão.
           </p>
-          <div class="chips">
-            <span class="chip">Sites de alta performance</span>
-            <span class="chip">Landing pages</span>
-            <span class="chip">E-commerce</span>
-            <span class="chip">Sistemas web</span>
-            <span class="chip">Next.js</span>
-            <span class="chip">SEO</span>
+          <div class="tags">
+            <span class="tag">Next.js</span>
+            <span class="tag">React</span>
+            <span class="tag">TailwindCSS</span>
+            <span class="tag">SEO técnico</span>
+            <span class="tag">Mobile first</span>
+            <span class="tag">Sistemas web</span>
           </div>
         </article>
 
-        <article class="company-card" style="--accent: var(--blue)">
-          <div class="company-top">
-            <div class="company-icon">LP</div>
-            <span class="tag">Produto SaaS</span>
+        <article class="company" style="--accent: var(--blue)">
+          <div class="company-header">
+            <div class="company-mark">LP</div>
+            <span class="label">Produto SaaS</span>
           </div>
           <h3>Loop Pages</h3>
           <p>
-            A frente de páginas, criação assistida por IA, hospedagem, painel de edição e publicação rápida. É onde transformamos a experiência de criar páginas em algo mais simples, escalável e acessível para pessoas, profissionais e empresas.
+            Plataforma para criação, gestão e publicação de páginas com apoio de IA, painel de edição, hospedagem, SSL, organizações e colaboração. A missão é tornar páginas profissionais mais acessíveis, rápidas e fáceis de manter.
           </p>
-          <div class="chips">
-            <span class="chip">Páginas com IA</span>
-            <span class="chip">CMS</span>
-            <span class="chip">Hospedagem</span>
-            <span class="chip">Organizações</span>
+          <div class="tags">
+            <span class="tag">Páginas com IA</span>
+            <span class="tag">CMS</span>
+            <span class="tag">Hospedagem</span>
+            <span class="tag">Organizações</span>
           </div>
         </article>
 
-        <article class="company-card" style="--accent: var(--pink)">
-          <div class="company-top">
-            <div class="company-icon">LG</div>
-            <span class="tag">Criatividade interativa</span>
+        <article class="company" style="--accent: var(--violet)">
+          <div class="company-header">
+            <div class="company-mark">LG</div>
+            <span class="label">Experiências</span>
           </div>
           <h3>Loop Games</h3>
           <p>
-            O laboratório criativo do grupo para jogos, experiências interativas, protótipos gamificados e produtos digitais com foco em diversão, retenção e narrativa. É a área onde experimentação vira aprendizado de produto.
+            Laboratório criativo para jogos, experiências interativas, protótipos gamificados e produtos digitais com foco em retenção, narrativa e experimentação. É onde criatividade vira aprendizado de produto.
           </p>
-          <div class="chips">
-            <span class="chip">Games</span>
-            <span class="chip">Gamificação</span>
-            <span class="chip">Prototipagem</span>
-            <span class="chip">Experiências digitais</span>
+          <div class="tags">
+            <span class="tag">Games</span>
+            <span class="tag">Gamificação</span>
+            <span class="tag">Protótipos</span>
+            <span class="tag">Interatividade</span>
           </div>
         </article>
 
-        <article class="company-card" style="--accent: var(--green)">
-          <div class="company-top">
-            <div class="company-icon">NX</div>
-            <span class="tag">IA privada</span>
+        <article class="company" style="--accent: var(--green)">
+          <div class="company-header">
+            <div class="company-mark">NX</div>
+            <span class="label">IA privada</span>
           </div>
           <h3>Nexus AI</h3>
           <p>
-            A frente de inteligência artificial privada do grupo. O objetivo é construir soluções local-first para casas inteligentes, automação, memória vetorial, roteamento de modelos e fallback em nuvem apenas quando necessário. Privacidade, baixa latência e controle são princípios de produto.
+            Frente de inteligência artificial local-first do grupo. O foco está em assistentes privados, automação residencial, memória vetorial, validação de intenção, IoT e uso de nuvem apenas quando fizer sentido.
           </p>
-          <div class="chips">
-            <span class="chip">Totem Nexus</span>
-            <span class="chip">IA local</span>
-            <span class="chip">Smart home</span>
-            <span class="chip">RAG</span>
-            <span class="chip">IoT</span>
+          <div class="tags">
+            <span class="tag">Totem Nexus</span>
+            <span class="tag">IA local</span>
+            <span class="tag">RAG</span>
+            <span class="tag">IoT</span>
+            <span class="tag">Automação</span>
           </div>
         </article>
 
-        <article class="company-card" style="--accent: var(--amber)">
-          <div class="company-top">
-            <div class="company-icon">CP</div>
-            <span class="tag">Operação comercial</span>
+        <article class="company" style="--accent: var(--amber)">
+          <div class="company-header">
+            <div class="company-mark">CP</div>
+            <span class="label">Comercial</span>
           </div>
           <h3>Comprow.com</h3>
           <p>
-            A frente comercial e operacional do grupo. Seu papel é conectar tecnologia, vitrine, compra, venda, atendimento e processos digitais. É onde produto, presença online e operação se encontram para gerar receita com mais clareza.
+            Frente voltada à operação comercial digital: vitrine, compra, venda, presença online, atendimento e automações. O papel da Comprow.com é aproximar produto, tecnologia e receita com mais organização.
           </p>
-          <div class="chips">
-            <span class="chip">Comércio digital</span>
-            <span class="chip">Operações</span>
-            <span class="chip">Vitrine</span>
-            <span class="chip">Automação</span>
+          <div class="tags">
+            <span class="tag">Vitrine digital</span>
+            <span class="tag">Operação</span>
+            <span class="tag">Automação</span>
+            <span class="tag">Comércio</span>
           </div>
         </article>
       </div>
@@ -1140,158 +1314,258 @@
 
     <section id="cultura" class="container fade-up">
       <div class="section-head">
-        <h2>Como pensamos</h2>
-        <p>Não queremos apenas entregar tarefas. Queremos construir um padrão de trabalho que deixe cada produto melhor a cada ciclo.</p>
+        <div>
+          <span class="kicker">Cultura</span>
+          <h2>Como trabalhamos</h2>
+        </div>
+        <p>
+          Nosso padrão existe para reduzir ruído, acelerar decisões e manter qualidade. Ideia boa sem execução vira só reunião com nome bonito.
+        </p>
       </div>
 
-      <div class="values-grid">
-        <article class="value-card">
-          <div class="number">01</div>
-          <h3>Performance é produto</h3>
-          <p>Velocidade, SEO, acessibilidade e responsividade não são extras. São parte da entrega.</p>
+      <div class="principles">
+        <article class="principle">
+          <div class="principle-number">01</div>
+          <h3>Performance é parte do produto</h3>
+          <p>
+            Velocidade, SEO, acessibilidade e responsividade entram desde o começo. Não tratamos qualidade técnica como acabamento.
+          </p>
         </article>
-        <article class="value-card">
-          <div class="number">02</div>
-          <h3>Design precisa vender</h3>
-          <p>Bonito é importante. Claro, confiável e convertido em resultado é melhor ainda.</p>
+
+        <article class="principle">
+          <div class="principle-number">02</div>
+          <h3>Design precisa ser funcional</h3>
+          <p>
+            A estética deve guiar o usuário, aumentar confiança e deixar a mensagem mais clara. Bonito sem função é decoração cara.
+          </p>
         </article>
-        <article class="value-card">
-          <div class="number">03</div>
-          <h3>Código limpo escala</h3>
-          <p>Escrevemos pensando em manutenção, reuso, equipe e crescimento do produto.</p>
+
+        <article class="principle">
+          <div class="principle-number">03</div>
+          <h3>Código precisa sobreviver ao amanhã</h3>
+          <p>
+            Escrevemos pensando em manutenção, reuso, documentação, escalabilidade e colaboração entre pessoas.
+          </p>
         </article>
-        <article class="value-card">
-          <div class="number">04</div>
-          <h3>IA com propósito</h3>
-          <p>Usamos IA para acelerar trabalho, automatizar processos e melhorar decisões, não para mascarar bagunça.</p>
+
+        <article class="principle">
+          <div class="principle-number">04</div>
+          <h3>IA deve resolver problemas reais</h3>
+          <p>
+            Usamos IA para acelerar processos, automatizar tarefas, apoiar decisões e melhorar produto. Não para maquiar desorganização.
+          </p>
         </article>
       </div>
     </section>
 
     <section class="container fade-up">
       <div class="section-head">
-        <h2>Nosso fluxo de entrega</h2>
-        <p>Uma estrutura simples para evitar o esporte favorito das empresas: começar correndo e descobrir o objetivo depois.</p>
+        <div>
+          <span class="kicker">Entrega</span>
+          <h2>Fluxo de trabalho</h2>
+        </div>
+        <p>
+          O processo oficial ajuda todo mundo a entender onde estamos, o que falta e como avançar sem transformar cada entrega em arqueologia corporativa.
+        </p>
       </div>
 
-      <div class="timeline">
-        <article class="step">
+      <div class="workflow">
+        <article class="workflow-step">
           <small>Etapa 1</small>
           <h3>Descoberta e planejamento</h3>
-          <p>Entendemos objetivo, público, proposta, escopo, prioridades e restrições. Sem briefing, tudo vira adivinhação cara.</p>
+          <p>
+            Entendemos objetivos, público, escopo, prioridade, restrições e entregáveis. Aqui definimos o problema antes de construir a solução.
+          </p>
         </article>
-        <article class="step">
+
+        <article class="workflow-step">
           <small>Etapa 2</small>
           <h3>Design e prototipagem</h3>
-          <p>Criamos estrutura, fluxo visual, componentes e experiência. O design precisa orientar o usuário, não apenas ocupar espaço.</p>
+          <p>
+            Criamos estrutura, fluxo, identidade visual aplicada, componentes e validação de experiência antes do desenvolvimento.
+          </p>
         </article>
-        <article class="step">
+
+        <article class="workflow-step">
           <small>Etapa 3</small>
           <h3>Desenvolvimento e integrações</h3>
-          <p>Construímos com tecnologias modernas, integrações, painel, APIs, métricas, automações e padrões de qualidade.</p>
+          <p>
+            Construímos com tecnologias modernas, APIs, CMS, métricas, pagamentos, CRM, automações e padrões de performance.
+          </p>
         </article>
-        <article class="step">
+
+        <article class="workflow-step">
           <small>Etapa 4</small>
           <h3>Lançamento e evolução</h3>
-          <p>Publicamos com domínio, SSL, monitoramento e suporte. Depois vem melhoria contínua, porque produto parado envelhece rápido.</p>
-        </article>
-      </div>
-    </section>
-
-    <section class="container fade-up">
-      <div class="stack-panel glass">
-        <div class="stack-copy">
-          <h3>Stack mental da equipe</h3>
           <p>
-            Trabalhamos onde produto, engenharia, design, marketing e IA se cruzam. O melhor membro do time não é quem sabe tudo, mas quem aprende rápido, documenta decisões, comunica bloqueios e entrega com capricho.
+            Publicamos com domínio, SSL, monitoramento, relatório inicial e plano de evolução. Produto bom continua melhorando.
           </p>
-        </div>
-        <div class="tools">
-          <div class="tool">
-            <strong>Front-end moderno</strong>
-            <span>Next.js, React, TailwindCSS, design systems, performance e componentes reutilizáveis.</span>
-          </div>
-          <div class="tool">
-            <strong>Back-end e dados</strong>
-            <span>Node.js, APIs, Prisma, bancos relacionais, autenticação e integrações externas.</span>
-          </div>
-          <div class="tool">
-            <strong>IA aplicada</strong>
-            <span>Modelos locais e em nuvem, automações, RAG, embeddings, validação de intenção e geração assistida.</span>
-          </div>
-          <div class="tool">
-            <strong>Produto e operação</strong>
-            <span>SEO, métricas, CRM, páginas de conversão, atendimento e crescimento contínuo.</span>
-          </div>
-        </div>
+        </article>
       </div>
     </section>
 
     <section id="primeira-semana" class="container fade-up">
       <div class="section-head">
-        <h2>Sua primeira semana</h2>
-        <p>Comece entendendo o grupo, os produtos, os canais e o padrão de entrega. Depois sim, pode quebrar algo. Com branch, por favor.</p>
+        <div>
+          <span class="kicker">Onboarding</span>
+          <h2>Sua primeira semana</h2>
+        </div>
+        <p>
+          O objetivo inicial é entender o ecossistema, configurar acessos, absorver o padrão de trabalho e contribuir sem incendiar o repositório.
+        </p>
       </div>
 
-      <div class="onboarding">
-        <aside class="checklist glass">
+      <div class="onboarding-grid">
+        <aside class="checklist panel">
           <h3>Checklist inicial</h3>
+
           <div class="check-item">
-            <div class="check-dot">✓</div>
-            <div>Entrar nos canais internos e acompanhar comunicados, decisões, roadmap e tarefas do time.</div>
+            <div class="check">✓</div>
+            <div>Entrar nos canais internos, acompanhar comunicados, tarefas, roadmap e decisões do time.</div>
           </div>
+
           <div class="check-item">
-            <div class="check-dot">✓</div>
-            <div>Ler a visão de cada marca: The Loop Code, Loop Pages, Loop Games, Nexus AI e Comprow.com.</div>
+            <div class="check">✓</div>
+            <div>Ler a visão das marcas: The Loop Code, Loop Pages, Loop Games, Nexus AI e Comprow.com.</div>
           </div>
+
           <div class="check-item">
-            <div class="check-dot">✓</div>
-            <div>Configurar ambiente de trabalho, acessos, repositórios, ferramentas e padrões de branch.</div>
+            <div class="check">✓</div>
+            <div>Configurar ambiente, acessos, repositórios, ferramentas e padrões de branch.</div>
           </div>
+
           <div class="check-item">
-            <div class="check-dot">✓</div>
-            <div>Escolher uma primeira tarefa pequena para entender o fluxo de entrega sem causar um pequeno incêndio digital.</div>
+            <div class="check">✓</div>
+            <div>Revisar padrões de design, componentes, escrita, documentação e revisão de entregas.</div>
           </div>
+
           <div class="check-item">
-            <div class="check-dot">✓</div>
-            <div>Documentar dúvidas, decisões e aprendizados para ajudar quem entrar depois.</div>
+            <div class="check">✓</div>
+            <div>Assumir uma primeira tarefa pequena, com escopo claro e revisão rápida.</div>
           </div>
         </aside>
 
-        <div class="rules">
-          <article class="rule">
+        <div class="conduct-grid">
+          <article class="conduct">
             <h3>Comunique cedo</h3>
-            <p>Bloqueio escondido vira atraso. Dúvida comunicada vira colaboração.</p>
+            <p>Bloqueios, dúvidas e riscos precisam aparecer rápido. Silêncio não é produtividade, é só atraso em modo furtivo.</p>
           </article>
-          <article class="rule">
+
+          <article class="conduct">
             <h3>Documente decisões</h3>
-            <p>Memória humana é um banco de dados sem backup. Escreva o que foi decidido.</p>
+            <p>Registre o que foi decidido, por quê, por quem e qual o impacto. Memória humana não tem versionamento decente.</p>
           </article>
-          <article class="rule">
+
+          <article class="conduct">
             <h3>Entregue em ciclos</h3>
-            <p>Preferimos progresso validado a perfeição invisível que nunca chega ao usuário.</p>
+            <p>Prefira progresso validado a perfeição invisível. Entrega pequena e revisada vence entrega gigante e misteriosa.</p>
           </article>
-          <article class="rule">
+
+          <article class="conduct">
             <h3>Pense no cliente</h3>
-            <p>Toda tela, API, campanha ou automação precisa resolver um problema real.</p>
+            <p>Toda tela, API, automação ou texto precisa ajudar alguém a avançar, comprar, entender ou resolver algo.</p>
           </article>
-          <article class="rule">
+
+          <article class="conduct">
             <h3>Cuide da estética</h3>
-            <p>O detalhe visual comunica qualidade antes mesmo do usuário ler qualquer texto.</p>
+            <p>Detalhe visual comunica qualidade. Espaçamento, contraste, hierarquia e consistência não são frescura.</p>
           </article>
-          <article class="rule">
+
+          <article class="conduct">
             <h3>Use IA com critério</h3>
-            <p>IA acelera, mas revisão humana mantém qualidade, segurança e coerência.</p>
+            <p>IA acelera, mas revisão humana mantém coerência, segurança, privacidade e responsabilidade.</p>
           </article>
         </div>
       </div>
     </section>
 
     <section class="container fade-up">
-      <div class="cta glass">
-        <h2>Você entrou para construir o próximo ciclo.</h2>
+      <div class="section-head">
+        <div>
+          <span class="kicker">Stack e rotina</span>
+          <h2>Ferramentas e mentalidade</h2>
+        </div>
         <p>
-          O grupo The Loop Code existe para criar produtos digitais que unem tecnologia, estética, automação e resultado. Aqui, cada pessoa ajuda a transformar ideias em sistemas, páginas, jogos, experiências e soluções inteligentes que podem crescer de verdade.
+          Trabalhamos com tecnologia moderna, mas a ferramenta não substitui clareza. Até porque instalar dependência não conta como estratégia.
+        </p>
+      </div>
+
+      <div class="resources">
+        <div class="resource-copy">
+          <h3>Uma equipe entre produto, engenharia, design e IA.</h3>
+          <p>
+            O melhor membro do time não é quem sabe tudo. É quem aprende rápido, entrega com capricho, pede contexto quando necessário, comunica bloqueios e deixa o próximo passo mais claro para todo mundo.
+          </p>
+        </div>
+
+        <div class="tools">
+          <div class="tool">
+            <strong>Front-end moderno</strong>
+            <span>Next.js, React, TailwindCSS, design systems, responsividade e componentes reutilizáveis.</span>
+          </div>
+
+          <div class="tool">
+            <strong>Back-end e dados</strong>
+            <span>Node.js, APIs, Prisma, autenticação, bancos relacionais, integrações e automações.</span>
+          </div>
+
+          <div class="tool">
+            <strong>IA aplicada</strong>
+            <span>Modelos locais e em nuvem, RAG, embeddings, validação de intenção, agentes e automação.</span>
+          </div>
+
+          <div class="tool">
+            <strong>Produto e crescimento</strong>
+            <span>SEO, métricas, CRM, conversão, atendimento, funis, manutenção e evolução contínua.</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="padrao-visual" class="container fade-up">
+      <div class="section-head">
+        <div>
+          <span class="kicker">Padrão visual</span>
+          <h2>Paleta aplicada</h2>
+        </div>
+        <p>
+          A página usa uma base dark profissional com acentos em azul, ciano e violeta, preservando a sensação tecnológica da marca com mais sobriedade institucional.
+        </p>
+      </div>
+
+      <div class="palette" aria-label="Paleta visual aplicada">
+        <div class="swatch" style="background: #050816">
+          <strong>Loop Dark</strong>
+          <span>#050816</span>
+        </div>
+        <div class="swatch" style="background: #0d1328">
+          <strong>Surface</strong>
+          <span>#0D1328</span>
+        </div>
+        <div class="swatch" style="background: #3b82f6">
+          <strong>Blue</strong>
+          <span>#3B82F6</span>
+        </div>
+        <div class="swatch" style="background: #22d3ee">
+          <strong>Cyan</strong>
+          <span>#22D3EE</span>
+        </div>
+        <div class="swatch" style="background: #8b5cf6">
+          <strong>Violet</strong>
+          <span>#8B5CF6</span>
+        </div>
+        <div class="swatch" style="background: #f8fafc; color: #06121f; box-shadow: none;">
+          <strong>Text</strong>
+          <span style="color: rgba(6,18,31,.72)">#F8FAFC</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="container fade-up">
+      <div class="cta">
+        <h2>Bem-vindo ao grupo. Agora o trabalho começa.</h2>
+        <p>
+          A The Loop Code Group existe para criar produtos digitais que unem tecnologia, estética, automação e resultado. Seu papel aqui é ajudar esse ecossistema a evoluir com clareza, qualidade e velocidade.
         </p>
         <div class="hero-actions" style="justify-content: center;">
           <a class="button primary" href="#top">Voltar ao topo</a>
@@ -1303,7 +1577,7 @@
 
   <footer class="container">
     <div class="footer-inner">
-      <div>© 2026 The Loop Code Group. Boas-vindas aos novos membros.</div>
+      <div>© 2026 The Loop Code Group. Página interna de boas-vindas.</div>
       <div>The Loop Code • Loop Pages • Loop Games • Nexus AI • Comprow.com</div>
     </div>
   </footer>
@@ -1312,12 +1586,12 @@
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
+          entry.target.classList.add("visible");
         }
       });
     }, { threshold: 0.12 });
 
-    document.querySelectorAll('.fade-up').forEach((element) => observer.observe(element));
+    document.querySelectorAll(".fade-up").forEach((element) => observer.observe(element));
   </script>
 </body>
 </html>
